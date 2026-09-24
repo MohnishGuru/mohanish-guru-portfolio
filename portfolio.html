@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mohanish Guru - Full Stack .NET Developer specializing in C#, ASP.NET Core, Web API, Angular, SQL Server and enterprise application development." />
-  <meta name="keywords" content="Mohanish Guru, .NET Developer, Full Stack Developer, ASP.NET Core, C#, Angular, SQL Server, Web API, Pune" />
+  <meta name="description" content="Mohanish Guru - Software Engineer & .NET Full Stack Developer specializing in C#, ASP.NET Core, ASP.NET MVC, Web API, Angular, SQL Server and enterprise application development in Pune, Maharashtra." />
+  <meta name="keywords" content="Mohanish Guru, Software Engineer, .NET Full Stack Developer, ASP.NET Core, C#, Angular, SQL Server, Web API, Pune, Entity Framework Core, ADO.NET, Resume, Portfolio" />
   <meta name="author" content="Mohanish Guru" />
-  <title>Mohanish Guru | Full Stack .NET Developer</title>
+  <title>Mohanish Guru | Software Engineer &amp; .NET Full Stack Developer</title>
 
   <!-- Google Fonts: Inter & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +17,7 @@
     :root {
       --primary: #059669;
       --primary-dark: #047857;
+      --primary-deep: #064e3b;
       --primary-light: #ecfdf5;
       --primary-border: #a7f3d0;
       --accent-green: #10b981;
@@ -33,7 +34,7 @@
       --hero-bg: radial-gradient(circle at 85% 25%, #d1fae5 0%, #ecfdf5 40%, #f8fafc 85%);
 
       --text-dark: #0f172a;
-      --text-body: #475569;
+      --text-body: #334155;
       --text-muted: #64748b;
       --text-light: #94a3b8;
       --border-color: #e2e8f0;
@@ -42,16 +43,16 @@
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 16px;
-      --radius-xl: 24px;
+      --radius-xl: 20px;
       --radius-full: 9999px;
 
       --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 4px 14px rgba(15, 23, 42, 0.06);
-      --shadow-lg: 0 12px 28px rgba(15, 23, 42, 0.08);
-      --shadow-hover: 0 12px 26px rgba(5, 150, 105, 0.12);
+      --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 14px 28px rgba(5, 150, 105, 0.12);
 
-      --container-max: 1180px;
-      --transition: all 0.25s ease-in-out;
+      --container-max: 1200px;
+      --transition: all 0.22s ease-in-out;
     }
 
     * {
@@ -62,7 +63,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px;
+      scroll-padding-top: 85px;
     }
 
     body {
@@ -106,8 +107,9 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 74px;
-      background: #ffffff;
+      height: 76px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-color);
       z-index: 1000;
       display: flex;
@@ -130,14 +132,14 @@
       align-items: center;
       gap: 10px;
       font-weight: 800;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       color: var(--text-dark);
     }
 
     .brand-icon-code {
       color: var(--primary);
       font-weight: 800;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       letter-spacing: -1px;
     }
 
@@ -145,12 +147,12 @@
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 28px;
+      gap: 26px;
     }
 
     .nav-menu a {
       font-size: 0.92rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-muted);
       position: relative;
       padding: 6px 0;
@@ -167,7 +169,7 @@
       bottom: -2px;
       left: 0;
       right: 0;
-      height: 2px;
+      height: 2.5px;
       background-color: var(--primary);
       border-radius: 2px;
     }
@@ -175,7 +177,28 @@
     .nav-right-actions {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
+    }
+
+    .btn-view-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      border: 1px solid var(--primary-border);
+      padding: 9px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-view-cv:hover {
+      background-color: #d1fae5;
+      color: var(--primary-deep);
+      transform: translateY(-1px);
     }
 
     .btn-resume {
@@ -184,7 +207,7 @@
       gap: 8px;
       background-color: #065f46;
       color: #ffffff;
-      padding: 10px 20px;
+      padding: 9px 18px;
       border-radius: var(--radius-sm);
       font-size: 0.88rem;
       font-weight: 600;
@@ -197,7 +220,7 @@
       box-shadow: 0 4px 14px rgba(6, 95, 70, 0.25);
     }
 
-    .btn-resume svg {
+    .btn-resume svg, .btn-view-cv svg {
       width: 16px;
       height: 16px;
     }
@@ -212,7 +235,7 @@
     }
 
     /* ==========================================================================
-       HERO SECTION (Light Fresh Theme with Mint Organic Backdrop)
+       HERO SECTION (Recruiter First Alignment)
        ========================================================================== */
     .hero-section {
       background: var(--hero-bg);
@@ -220,31 +243,52 @@
       padding-bottom: 75px;
       position: relative;
       overflow: hidden;
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.25fr 0.95fr;
       align-items: center;
       gap: 48px;
     }
 
-    .hero-greeting {
-      font-size: 0.88rem;
-      color: var(--primary);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 12px;
-      display: block;
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid var(--primary-border);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 16px;
+    }
+
+    .status-pulse-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: pulseGreen 2s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+      70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
 
     .hero-name {
-      font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+      font-size: clamp(2.6rem, 4.8vw, 3.8rem);
       font-weight: 800;
-      line-height: 1.05;
+      line-height: 1.08;
       color: var(--text-dark);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .hero-name .highlight {
@@ -252,27 +296,48 @@
     }
 
     .hero-role {
-      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-size: clamp(1.2rem, 2.2vw, 1.6rem);
       font-weight: 700;
       color: #334155;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
+    .hero-role-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Recruiter Quick Info Bar */
     .hero-meta-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 16px 24px;
-      margin-bottom: 24px;
+      gap: 12px 20px;
+      margin-bottom: 22px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
     }
 
     .hero-meta-item {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       font-size: 0.88rem;
       color: var(--text-body);
-      font-weight: 500;
+      font-weight: 600;
       transition: var(--transition);
     }
 
@@ -287,14 +352,126 @@
       flex-shrink: 0;
     }
 
-    .hero-bio {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: #475569;
-      max-width: 580px;
+    .copy-chip-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: var(--transition);
     }
 
-    /* Hero Right - Organic Mint Shape with sparkles */
+    .copy-chip-btn:hover {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .hero-bio {
+      font-size: 0.97rem;
+      line-height: 1.72;
+      color: #475569;
+      margin-bottom: 24px;
+    }
+
+    .hero-bio strong {
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    /* Recruiter Metric Snapshot Bar */
+    .hero-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .hero-metric-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .hero-metric-card:hover {
+      border-color: var(--primary-border);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-metric-card .metric-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+
+    .hero-metric-card .metric-lbl {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 0.94rem;
+      font-weight: 700;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
+    }
+
+    .btn-hero-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(5, 150, 105, 0.35);
+    }
+
+    .btn-hero-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #ffffff;
+      color: var(--text-dark);
+      border: 1px solid var(--border-color);
+      padding: 12px 22px;
+      border-radius: var(--radius-sm);
+      font-size: 0.94rem;
+      font-weight: 700;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-hero-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background-color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Right - Organic Mint Shape & Image */
     .hero-portrait-wrapper {
       display: flex;
       align-items: center;
@@ -316,7 +493,7 @@
     }
 
     .organic-shape-backdrop img {
-      width: 86%;
+      width: 88%;
       height: 94%;
       object-fit: cover;
       object-position: top center;
@@ -324,24 +501,76 @@
       filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.15));
     }
 
+    /* Floating Badges on Portrait */
+    .hero-floating-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-md);
+      z-index: 10;
+      animation: floatBadge 4s ease-in-out infinite alternate;
+    }
+
+    .badge-pos-top {
+      top: 15px;
+      right: 0px;
+    }
+
+    .badge-pos-bottom {
+      bottom: 10px;
+      left: 0px;
+      animation-delay: -2s;
+    }
+
+    @keyframes floatBadge {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-8px); }
+    }
+
+    .floating-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .floating-text strong {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.2;
+    }
+
+    .floating-text span {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
     /* Floating Sparkles */
     .sparkle-icon {
       position: absolute;
       color: #10b981;
       opacity: 0.75;
+      font-size: 1.4rem;
       animation: pulseSparkle 3s ease-in-out infinite alternate;
     }
 
-    .sparkle-top-right {
-      top: -15px;
-      right: 15px;
-      font-size: 1.5rem;
-    }
-
-    .sparkle-bottom-left {
-      bottom: -15px;
-      left: 15px;
-      font-size: 1.4rem;
+    .sparkle-top-left {
+      top: 10px;
+      left: 30px;
     }
 
     @keyframes pulseSparkle {
@@ -350,17 +579,26 @@
     }
 
     /* ==========================================================================
-       SECTION HEADINGS (Green Circle Icon + Title)
+       SECTION HEADINGS (Standardized Uniform Alignment)
        ========================================================================== */
     .section-wrap {
-      padding: 72px 0;
+      padding: 76px 0;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .section-header-block {
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
       gap: 14px;
-      margin-bottom: 28px;
     }
 
     .section-circle-badge {
@@ -386,27 +624,78 @@
     }
 
     .section-title-text {
-      font-size: 1.65rem;
+      font-size: 1.75rem;
       font-weight: 800;
       color: var(--text-dark);
       letter-spacing: -0.02em;
     }
 
+    .section-subtitle-tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
     /* ==========================================================================
-       ABOUT ME SECTION
+       PROFESSIONAL SUMMARY & ABOUT SECTION
        ========================================================================== */
     .about-split-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 36px;
+      align-items: stretch;
+    }
+
+    .about-summary-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-summary-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      display: flex;
       align-items: center;
+      gap: 10px;
     }
 
     .about-bio-text {
       font-size: 0.98rem;
       color: var(--text-body);
-      line-height: 1.75;
-      margin-bottom: 16px;
+      line-height: 1.78;
+      margin-bottom: 18px;
+    }
+
+    .about-core-domains {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .domain-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--section-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-dark);
     }
 
     .about-highlights-2x2 {
@@ -416,26 +705,26 @@
     }
 
     .highlight-card-box {
-      background: #f8fafc;
+      background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 20px;
+      padding: 22px;
       display: flex;
       align-items: flex-start;
       gap: 14px;
       transition: var(--transition);
-    }
-
-    .highlight-card-box:hover {
-      background: #ffffff;
-      border-color: var(--primary-border);
-      transform: translateY(-2px);
       box-shadow: var(--shadow-sm);
     }
 
+    .highlight-card-box:hover {
+      border-color: var(--primary-border);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
     .hl-circle-icon {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: #ecfdf5;
       color: var(--primary);
@@ -452,48 +741,86 @@
 
     .hl-info-text h3 {
       font-size: 0.98rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--text-dark);
       margin-bottom: 4px;
     }
 
     .hl-info-text p {
-      font-size: 0.82rem;
+      font-size: 0.84rem;
       color: var(--text-muted);
       line-height: 1.45;
     }
 
     /* ==========================================================================
-       TECHNICAL SKILLS SECTION
+       TECHNICAL SKILLS SECTION (8 Clean Recruiter Categories)
        ========================================================================== */
-    .skills-grid-2col {
+    .skills-filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 8px 16px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skills-filter-bar svg {
+      color: var(--text-muted);
+      width: 18px;
+      height: 18px;
+    }
+
+    .skills-filter-bar input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      background: transparent;
+    }
+
+    .skills-grid-8col {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
-    .tech-skill-item {
+    .tech-skill-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      padding: 24px;
+      padding: 22px;
       display: flex;
-      align-items: flex-start;
-      gap: 20px;
+      flex-direction: column;
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
+      position: relative;
     }
 
-    .tech-skill-item:hover {
+    .tech-skill-card:hover {
       border-color: #cbd5e1;
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
 
+    .tech-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
     .tech-skill-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -502,176 +829,255 @@
     }
 
     .tech-skill-badge svg {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
     }
 
-    .badge-code     { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
-    .badge-monitor  { background: linear-gradient(135deg, #059669, #047857); }
-    .badge-database { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-    .badge-gear     { background: linear-gradient(135deg, #f97316, #ea580c); }
-    .badge-wrench   { background: linear-gradient(135deg, #ef4444, #dc2626); }
-    .badge-cloud    { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+    .badge-blue    { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+    .badge-emerald { background: linear-gradient(135deg, #059669, #047857); }
+    .badge-purple  { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+    .badge-orange  { background: linear-gradient(135deg, #f97316, #ea580c); }
+    .badge-red     { background: linear-gradient(135deg, #ef4444, #dc2626); }
+    .badge-cyan    { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+    .badge-teal    { background: linear-gradient(135deg, #0d9488, #0f766e); }
+    .badge-indigo  { background: linear-gradient(135deg, #4f46e5, #4338ca); }
 
-    .tech-skill-content h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
+    .tech-card-header h3 {
+      font-size: 0.98rem;
+      font-weight: 800;
       color: var(--text-dark);
-      margin-bottom: 6px;
+      line-height: 1.2;
     }
 
-    .tech-skill-content p {
-      font-size: 0.88rem;
+    .tech-card-header span {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tech-skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-content: flex-start;
+      flex-grow: 1;
+    }
+
+    .skill-pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: var(--radius-sm);
+      background: var(--section-alt);
       color: var(--text-body);
-      line-height: 1.55;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .skill-pill:hover, .skill-pill.match-highlight {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-color: var(--primary-border);
     }
 
     /* ==========================================================================
-       SIDE-BY-SIDE: EXPERIENCE (LEFT) & FEATURED PROJECTS (RIGHT)
+       PROFESSIONAL EXPERIENCE SECTION (Full-Width, Clear Alignment)
        ========================================================================== */
-    .exp-projects-split-layout {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: 36px;
-      align-items: flex-start;
-    }
-
-    /* Left: Experience Timeline */
-    .timeline-track-wrap {
-      position: relative;
-      padding-left: 32px;
-    }
-
-    .timeline-track-wrap::before {
-      content: '';
-      position: absolute;
-      left: 7px;
-      top: 12px;
-      bottom: 12px;
-      width: 2px;
-      background: #a7f3d0;
-    }
-
-    .exp-entry-node {
-      position: relative;
-      margin-bottom: 28px;
-    }
-
-    .exp-bullet-dot {
-      position: absolute;
-      left: -32px;
-      top: 6px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background-color: #ffffff;
-      border: 4px solid var(--primary);
-      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
-    }
-
-    .exp-entry-card {
+    .exp-main-card {
       background: #ffffff;
       border: 1px solid var(--border-color);
       border-radius: var(--radius-xl);
-      padding: 28px;
+      padding: 36px;
       box-shadow: var(--shadow-sm);
-    }
-
-    .exp-top-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 4px;
-    }
-
-    .exp-top-heading h3 {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--text-dark);
-    }
-
-    .exp-date-pill {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      background: #f1f5f9;
-      padding: 4px 10px;
-      border-radius: var(--radius-sm);
-      white-space: nowrap;
-    }
-
-    .exp-role-text {
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 2px;
-    }
-
-    .exp-location-row {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-bottom: 16px;
-    }
-
-    .exp-bullets-list {
-      padding-left: 18px;
-      list-style-type: disc;
-      margin-bottom: 18px;
-    }
-
-    .exp-bullets-list li {
-      font-size: 0.88rem;
-      color: var(--text-body);
-      line-height: 1.6;
-      margin-bottom: 8px;
-    }
-
-    .exp-bullets-list li::marker {
-      color: var(--primary);
-    }
-
-    .exp-tech-stack-row {
-      padding-top: 14px;
-      border-top: 1px solid var(--border-subtle);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .exp-tech-stack-row strong {
-      color: var(--text-dark);
-    }
-
-    /* Right: Featured Projects List Stack */
-    .featured-projects-column {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .project-row-item {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 20px 22px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      cursor: pointer;
       position: relative;
     }
 
-    .project-row-item:hover {
-      border-color: #34d399;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(5, 150, 105, 0.12);
+    .exp-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .proj-row-icon {
+    .exp-title-block h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .exp-company-line {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .exp-meta-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .exp-date-pill {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #065f46;
+      background: #d1fae5;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--primary-border);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-loc-pill {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #f1f5f9;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .exp-bullets-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 28px;
+      margin-bottom: 28px;
+    }
+
+    .exp-bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: var(--text-body);
+    }
+
+    .exp-bullet-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #ecfdf5;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .exp-bullet-check svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .exp-tech-summary-box {
+      background: var(--section-alt);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .exp-tech-label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+    }
+
+    .exp-tech-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .exp-tech-chip {
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      background: #ffffff;
+      color: #0f766e;
+      border: 1px solid #ccfbf1;
+    }
+
+    /* ==========================================================================
+       KEY PROJECTS SECTION (Uniform 3-Column Recruiter Friendly Grid)
+       ========================================================================== */
+    .projects-grid-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card-full {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .project-card-full:hover {
+      border-color: #34d399;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(5, 150, 105, 0.12);
+    }
+
+    .proj-card-top {
+      margin-bottom: 20px;
+    }
+
+    .proj-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .proj-cat-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .tag-blue   { background: #eff6ff; color: #2563eb; }
+    .tag-green  { background: #ecfdf5; color: #059669; }
+    .tag-purple { background: #f5f3ff; color: #7c3aed; }
+
+    .proj-card-icon {
       width: 44px;
       height: 44px;
       border-radius: var(--radius-md);
@@ -680,140 +1086,249 @@
       justify-content: center;
       color: #ffffff;
       flex-shrink: 0;
-      margin-top: 2px;
     }
 
-    .proj-row-icon svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .proj-row-info {
-      flex-grow: 1;
-      min-width: 0;
-    }
-
-    .proj-tag-eyebrow {
-      font-size: 0.72rem;
+    .proj-card-title {
+      font-size: 1.35rem;
       font-weight: 800;
-      color: var(--primary);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 3px;
-    }
-
-    .proj-row-info h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
       color: var(--text-dark);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
     }
 
-    .proj-row-info p.proj-summary {
-      font-size: 0.85rem;
+    .proj-card-desc {
+      font-size: 0.88rem;
       color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 12px;
+      line-height: 1.6;
+      margin-bottom: 16px;
     }
 
-    .proj-tags-line {
+    .proj-tech-stack-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 18px;
     }
 
-    .proj-tag-chip {
-      font-size: 0.72rem;
+    .proj-tech-badge {
+      font-size: 0.74rem;
       font-weight: 600;
-      padding: 3px 8px;
+      padding: 4px 8px;
       border-radius: var(--radius-sm);
-      background: #eff6ff;
-      color: #2563eb;
+      background: #f1f5f9;
+      color: var(--text-body);
+      border: 1px solid var(--border-color);
     }
 
-    .proj-card-footer-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding-top: 10px;
-      border-top: 1px dashed #e2e8f0;
-      width: 100%;
-      font-size: 0.78rem;
-      font-weight: 700;
+    .proj-highlights-list {
+      padding-left: 18px;
+      margin-bottom: 20px;
+      list-style-type: disc;
+    }
+
+    .proj-highlights-list li {
+      font-size: 0.84rem;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+
+    .proj-highlights-list li::marker {
       color: var(--primary);
-      transition: var(--transition);
     }
 
-    .project-row-item:hover .proj-card-footer-cta {
-      color: var(--primary-dark);
+    .proj-card-footer {
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--primary);
+      font-size: 0.84rem;
+      font-weight: 700;
     }
 
-    .project-row-item:hover .proj-card-footer-cta svg {
-      transform: translateX(4px);
-    }
-
-    .proj-card-footer-cta svg {
+    .proj-card-footer svg {
       transition: transform 0.2s ease;
     }
 
-    .proj-circle-arrow {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      flex-shrink: 0;
-      transition: var(--transition);
-      margin-top: 2px;
-      background: #ffffff;
-      cursor: pointer;
-    }
-
-    .project-row-item:hover .proj-circle-arrow {
-      background: var(--primary-light);
-      border-color: var(--primary-border);
-      color: var(--primary);
-      transform: translateX(2px);
-    }
-
-    /* Bottom 'View All Projects' callout card */
-    .view-all-projects-card {
-      background: #ecfdf5;
-      border: 1px solid var(--primary-border);
-      border-radius: var(--radius-lg);
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .view-all-projects-card:hover {
-      background: #d1fae5;
+    .project-card-full:hover .proj-card-footer svg {
       transform: translateX(4px);
     }
 
-    .view-all-icon {
+    /* ==========================================================================
+       EDUCATION & ACHIEVEMENTS SECTION (Perfect 2-Column Balance)
+       ========================================================================== */
+    .edu-cert-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .bottom-info-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      height: 100%;
+    }
+
+    .bottom-info-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .bottom-info-icon-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: #ecfdf5;
       color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
-    .view-all-text h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #065f46;
+    .bottom-info-icon-badge svg {
+      width: 26px;
+      height: 26px;
     }
 
-    .view-all-text p {
-      font-size: 0.78rem;
-      color: #047857;
+    .bottom-info-details h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .bottom-info-details .sub {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .bottom-info-details .meta {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    /* ==========================================================================
+       RECRUITER CONNECT / CONTACT SECTION
+       ========================================================================== */
+    .contact-banner-card {
+      background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+      border-radius: var(--radius-xl);
+      padding: 48px;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-left-info {
+      max-width: 580px;
+    }
+
+    .contact-sub-eyebrow {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #a7f3d0;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 8px;
+    }
+
+    .contact-heading {
+      color: #ffffff;
+      font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .contact-desc {
+      color: #d1fae5;
+      font-size: 0.96rem;
+      line-height: 1.7;
+    }
+
+    .contact-action-tray {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 300px;
+    }
+
+    .contact-btn-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .contact-btn-box:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
+    }
+
+    .contact-btn-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Toast Notification */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #065f46;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 3000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast-msg.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
 
     /* ==========================================================================
@@ -844,7 +1359,7 @@
       border: 1px solid var(--border-color);
       border-radius: var(--radius-xl);
       box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35);
-      max-width: 840px;
+      max-width: 860px;
       width: 100%;
       max-height: 90vh;
       display: flex;
@@ -907,7 +1422,7 @@
     }
 
     .modal-title-wrap h2 {
-      font-size: 1.4rem;
+      font-size: 1.45rem;
       font-weight: 800;
       color: var(--text-dark);
       margin-bottom: 4px;
@@ -915,18 +1430,12 @@
     }
 
     .modal-company-sub {
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
       display: flex;
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
-    }
-
-    .modal-company-sub span {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
     }
 
     .modal-header-actions {
@@ -957,7 +1466,6 @@
       border-color: #fca5a5;
     }
 
-    /* Modal Project Switcher Tab Strip */
     .modal-switcher-strip {
       padding: 10px 24px;
       background: #f1f5f9;
@@ -1162,99 +1670,109 @@
       box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
     }
 
-    @media (max-width: 640px) {
-      .project-modal-backdrop {
-        padding: 10px;
-      }
-
-      .project-modal-container {
-        max-height: 96vh;
-      }
-
-      .modal-header-bar, .modal-body-scroll, .modal-footer-bar {
-        padding: 16px;
-      }
-
-      .modal-arch-pipeline {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .modal-footer-bar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .modal-nav-btns {
-        justify-content: space-between;
-      }
-
-      .modal-cta-btn {
-        justify-content: center;
-      }
-    }
-
     /* ==========================================================================
-       EDUCATION & CERTIFICATIONS
+       RECRUITER RESUME MODAL (ATS Printable Format)
        ========================================================================== */
-    .edu-cert-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-
-    .bottom-info-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-xl);
-      padding: 26px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      height: 100%;
-    }
-
-    .bottom-info-card:hover {
-      border-color: #cbd5e1;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .bottom-info-icon-badge {
-      width: 52px;
-      height: 52px;
-      border-radius: var(--radius-md);
-      background: #ecfdf5;
-      color: var(--primary);
+    .resume-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 19, 34, 0.76);
+      backdrop-filter: blur(8px);
+      z-index: 2600;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
     }
 
-    .bottom-info-icon-badge svg {
-      width: 26px;
-      height: 26px;
+    .resume-modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
     }
 
-    .bottom-info-details h3 {
-      font-size: 1.05rem;
+    .resume-modal-container {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      max-width: 900px;
+      width: 100%;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    .resume-modal-header {
+      padding: 16px 24px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .resume-paper-body {
+      padding: 36px 40px;
+      overflow-y: auto;
+      font-family: 'Inter', sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .res-doc-header {
+      text-align: center;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    .res-doc-name {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .res-doc-title {
+      font-size: 1.1rem;
       font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 4px;
+      color: #059669;
+      margin: 4px 0 10px;
     }
 
-    .bottom-info-details .sub {
+    .res-doc-contact {
       font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 4px;
+      color: #475569;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .bottom-info-details .meta {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-dark);
+    .res-section-title {
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 4px;
+      margin: 18px 0 10px;
+      letter-spacing: 0.05em;
+    }
+
+    .res-bullets {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .res-bullets li {
+      font-size: 0.88rem;
+      margin-bottom: 5px;
+      color: #334155;
     }
 
     /* ==========================================================================
@@ -1264,7 +1782,6 @@
       background-color: var(--footer-bg);
       color: #94a3b8;
       padding: 44px 0 28px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .footer-content-row {
@@ -1348,18 +1865,35 @@
     /* ==========================================================================
        RESPONSIVE DESIGN (MOBILE & TABLET)
        ========================================================================== */
-    @media (max-width: 1024px) {
+    @media (max-width: 1080px) {
       .hero-grid {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 36px;
       }
 
+      .hero-status-pill {
+        margin-inline: auto;
+      }
+
+      .hero-role {
+        justify-content: center;
+      }
+
+      .hero-meta-row {
+        justify-content: center;
+      }
+
       .hero-bio {
         margin-inline: auto;
       }
 
-      .hero-meta-row {
+      .hero-metrics-grid {
+        max-width: 600px;
+        margin-inline: auto;
+      }
+
+      .hero-cta-group {
         justify-content: center;
       }
 
@@ -1367,7 +1901,15 @@
         grid-template-columns: 1fr;
       }
 
-      .exp-projects-split-layout {
+      .skills-grid-8col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid-3col {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-bullets-container {
         grid-template-columns: 1fr;
       }
     }
@@ -1375,13 +1917,12 @@
     @media (max-width: 768px) {
       .header-nav {
         background: rgba(255, 255, 255, 0.96);
-        backdrop-filter: blur(12px);
       }
 
       .nav-menu {
         display: none;
         position: absolute;
-        top: 74px;
+        top: 76px;
         left: 0;
         right: 0;
         background: #ffffff;
@@ -1405,8 +1946,8 @@
         display: none;
       }
 
-      .skills-grid-2col {
-        grid-template-columns: 1fr;
+      .hero-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .edu-cert-2col {
@@ -1417,6 +1958,14 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+      }
+
+      .contact-banner-card {
+        padding: 30px 24px;
+      }
+
+      .contact-action-tray {
+        width: 100%;
       }
     }
 
@@ -1435,44 +1984,42 @@
       }
 
       .organic-shape-backdrop {
-        width: min(280px, 76vw);
-        height: min(280px, 76vw);
+        width: min(280px, 78vw);
+        height: min(280px, 78vw);
+      }
+
+      .hero-floating-badge {
+        display: none;
       }
 
       .about-highlights-2x2 {
         grid-template-columns: 1fr;
       }
 
-      .timeline-track-wrap {
-        padding-left: 20px;
+      .skills-grid-8col {
+        grid-template-columns: 1fr;
       }
 
-      .exp-bullet-dot {
-        left: -20px;
+      .exp-main-card {
+        padding: 22px 18px;
       }
 
-      .exp-entry-card {
+      .resume-paper-body {
         padding: 20px 16px;
       }
+    }
 
-      .exp-top-heading {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
+    /* Print Styles */
+    @media print {
+      .header-nav, .site-footer, .hero-section, .skills-filter-bar, .modal-footer-bar, .modal-header-actions, .mobile-toggle, #downloadResumeBtn {
+        display: none !important;
       }
-
-      .project-row-item {
-        padding: 16px 14px;
-        gap: 12px;
+      body {
+        background: white !important;
+        color: black !important;
       }
-
-      .proj-row-icon {
-        width: 38px;
-        height: 38px;
-      }
-
-      .proj-circle-arrow {
-        display: none;
+      .resume-paper-body {
+        padding: 0 !important;
       }
     }
   </style>
@@ -1492,7 +2039,7 @@
 
       <ul class="nav-menu" id="navMenu">
         <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#about">Summary</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -1501,12 +2048,21 @@
       </ul>
 
       <div class="nav-right-actions">
-        <a href="mailto:mohanishguru111@gmail.com?subject=Resume%20Request%20-%20Mohanish%20Guru" class="btn-resume" id="downloadResumeBtn">
+        <button class="btn-view-cv" onclick="openResumeModal()" aria-label="Preview full resume">
+          <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span>Preview CV</span>
+        </button>
+
+        <a href="mailto:mohanishguru111@gmail.com?subject=Job%20Opportunity%20-%20Mohanish%20Guru%20(.NET%20Developer)" class="btn-resume" id="downloadResumeBtn">
           <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
           </svg>
           <span>Download Resume</span>
         </a>
+
         <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle mobile menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -1518,85 +2074,192 @@
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION
+         HERO SECTION (Recruiter First Alignment)
          ========================================================================== -->
     <section class="hero-section" id="home">
       <div class="container hero-grid">
-        <!-- Hero Content -->
+        <!-- Hero Left Content -->
         <div>
-          <span class="hero-greeting">HELLO, I'M</span>
-          <h1 class="hero-name">Mohanish <span class="highlight">Guru</span></h1>
-          <div class="hero-role">Full Stack .NET Developer</div>
+          <!-- Status Pill -->
+          <div class="hero-status-pill">
+            <span class="status-pulse-dot"></span>
+            <span>Available for Opportunities · Software Engineer | .NET Full Stack</span>
+          </div>
 
+          <h1 class="hero-name">Mohanish <span class="highlight">Guru</span></h1>
+          
+          <div class="hero-role">
+            <span>Software Engineer | .NET Full Stack Developer</span>
+            <span class="hero-role-badge">1.5+ Years Exp</span>
+          </div>
+
+          <!-- Recruiter Contact Meta Row -->
           <div class="hero-meta-row">
             <div class="hero-meta-item">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
               </svg>
-              <span>Pune, Maharashtra, India</span>
+              <span>Pune, Maharashtra</span>
             </div>
 
-            <a href="mailto:mohanishguru111@gmail.com" class="hero-meta-item">
+            <div class="hero-meta-item">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
-              <span>mohanishguru111@gmail.com</span>
-            </a>
+              <a href="mailto:mohanishguru111@gmail.com">mohanishguru111@gmail.com</a>
+              <button class="copy-chip-btn" onclick="copyContact('mohanishguru111@gmail.com', 'Email copied!')" title="Copy Email">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" /></svg>
+              </button>
+            </div>
 
-            <a href="tel:+919225314839" class="hero-meta-item">
+            <div class="hero-meta-item">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
               </svg>
-              <span>+91 9225314839</span>
-            </a>
+              <a href="tel:+919225314839">+91 9225314839</a>
+              <button class="copy-chip-btn" onclick="copyContact('+919225314839', 'Phone number copied!')" title="Copy Phone">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" /></svg>
+              </button>
+            </div>
           </div>
 
+          <!-- Professional Bio Summary -->
           <p class="hero-bio">
-            Passionate Full Stack .NET Developer with 1.5+ years of experience in building scalable enterprise web and desktop applications, modern web frameworks and database management. I love solving real-world problems through clean and efficient code.
+            <strong>.NET Full Stack Developer</strong> with <strong>1.5+ years of experience</strong> designing, developing, and maintaining scalable web and desktop applications using <strong>C#, ASP.NET Core, ASP.NET MVC, Web API, EF Core, LINQ, ADO.NET, and SQL Server</strong>. Proven expertise in RESTful API development, layered architecture, OOP, database optimization, and responsive front-end interfaces with <strong>Angular</strong>.
           </p>
+
+          <!-- Recruiter Metric Snapshot Bar -->
+          <div class="hero-metrics-grid">
+            <div class="hero-metric-card">
+              <div class="metric-val">1.5+</div>
+              <div class="metric-lbl">Years Experience</div>
+            </div>
+            <div class="hero-metric-card">
+              <div class="metric-val">.NET Core</div>
+              <div class="metric-lbl">C# &amp; Web API</div>
+            </div>
+            <div class="hero-metric-card">
+              <div class="metric-val">Angular</div>
+              <div class="metric-lbl">&amp; Modern UI</div>
+            </div>
+            <div class="hero-metric-card">
+              <div class="metric-val">SQL Server</div>
+              <div class="metric-lbl">Query Tuning &amp; SPs</div>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="hero-cta-group">
+            <button class="btn-hero-primary" onclick="openResumeModal()">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+              </svg>
+              <span>View Full Resume</span>
+            </button>
+
+            <a href="#projects" class="btn-hero-secondary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+              </svg>
+              <span>Explore Key Projects</span>
+            </a>
+
+            <a href="#contact" class="btn-hero-secondary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a.75.75 0 01-.874-1.047 3.518 3.518 0 00.32-1.39A8.188 8.188 0 013 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+              </svg>
+              <span>Get in Touch</span>
+            </a>
+          </div>
         </div>
 
         <!-- Hero Right Organic Backdrop -->
         <div class="hero-portrait-wrapper">
-          <span class="sparkle-icon sparkle-top-right">✦</span>
-          <span class="sparkle-icon sparkle-bottom-left">✦</span>
+          <span class="sparkle-icon sparkle-top-left">✦</span>
+
+          <!-- Floating Badges for Recruiters -->
+          <div class="hero-floating-badge badge-pos-top">
+            <div class="floating-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="floating-text">
+              <strong>ASP.NET Core &amp; Web API</strong>
+              <span>Clean REST Architecture</span>
+            </div>
+          </div>
 
           <div class="organic-shape-backdrop">
-            <img src="./profile.jpg" alt="Mohanish Guru - Full Stack .NET Developer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80';" />
+            <img src="./profile.jpg" alt="Mohanish Guru - Software Engineer & Full Stack .NET Developer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80';" />
+          </div>
+
+          <div class="hero-floating-badge badge-pos-bottom">
+            <div class="floating-icon" style="background:#eff6ff; color:#2563eb;">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+              </svg>
+            </div>
+            <div class="floating-text">
+              <strong>SQL Server Optimization</strong>
+              <span>High-Performance SPs &amp; Indexing</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         ABOUT ME SECTION
+         PROFESSIONAL SUMMARY & ABOUT SECTION
          ========================================================================== -->
     <section class="section-wrap" id="about">
       <div class="container">
         <div class="section-header-block">
-          <div class="section-circle-badge">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-            </svg>
+          <div class="section-title-wrap">
+            <div class="section-circle-badge">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+              </svg>
+            </div>
+            <div>
+              <span class="section-subtitle-tag">CANDIDATE OVERVIEW</span>
+              <h2 class="section-title-text">Professional Summary</h2>
+            </div>
           </div>
-          <h2 class="section-title-text">About Me</h2>
         </div>
 
         <div class="about-split-grid">
-          <!-- Left Text -->
-          <div>
-            <p class="about-bio-text">
-              I am a Full Stack .NET Developer with experience in building web and desktop applications, working with modern technologies and delivering quality solutions. I enjoy working in collaborative teams, learning new technologies and continuously improving my skills to create better user experiences and business value.
-            </p>
-            <p class="about-bio-text" style="margin-bottom:0;">
-              Experienced in designing, developing and maintaining web and desktop applications, with hands-on exposure to RESTful APIs, layered architecture, OOP, SQL optimization, dynamic reporting automation and production deployment on IIS.
-            </p>
+          <!-- Left Summary Card -->
+          <div class="about-summary-card">
+            <div>
+              <div class="about-summary-title">
+                <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+                <span>Engineering Philosophy &amp; Core Strengths</span>
+              </div>
+              <p class="about-bio-text">
+                .NET Full Stack Developer with <strong>1.5+ years of experience</strong> designing, developing, and maintaining scalable web and desktop applications using <strong>C#, ASP.NET Core, ASP.NET MVC, Web API, Entity Framework Core, LINQ, ADO.NET, and SQL Server</strong>.
+              </p>
+              <p class="about-bio-text">
+                Proven expertise in <strong>RESTful API development, layered architecture, object-oriented programming (OOP), database-driven applications, SQL query optimization, and reusable component design</strong>. Skilled in building responsive front-end interfaces with <strong>Angular, JavaScript, jQuery, AJAX, Bootstrap, HTML5, and CSS3</strong>.
+              </p>
+              <p class="about-bio-text" style="margin-bottom:0;">
+                Experienced in <strong>Agile/Scrum methodologies, application support, API testing (Postman &amp; Swagger), reporting automation, and production deployment on IIS</strong>.
+              </p>
+            </div>
+
+            <div class="about-core-domains">
+              <span class="domain-tag">✔ Layered Architecture</span>
+              <span class="domain-tag">✔ RESTful Web APIs</span>
+              <span class="domain-tag">✔ Database Tuning &amp; SPs</span>
+              <span class="domain-tag">✔ Production IIS Deployment</span>
+              <span class="domain-tag">✔ Agile &amp; Scrum Delivery</span>
+            </div>
           </div>
 
           <!-- Right 2x2 Highlights Grid -->
           <div class="about-highlights-2x2">
-            <!-- 1. Clean Code -->
+            <!-- 1. Clean Code & Architecture -->
             <div class="highlight-card-box">
               <div class="hl-circle-icon">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1604,12 +2267,12 @@
                 </svg>
               </div>
               <div class="hl-info-text">
-                <h3>Clean Code</h3>
-                <p>Write maintainable and scalable code</p>
+                <h3>Clean Architecture</h3>
+                <p>Layered systems, OOP design patterns &amp; reusable components</p>
               </div>
             </div>
 
-            <!-- 2. Problem Solver -->
+            <!-- 2. Problem Solver & DB Tuning -->
             <div class="highlight-card-box">
               <div class="hl-circle-icon">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1617,12 +2280,25 @@
                 </svg>
               </div>
               <div class="hl-info-text">
-                <h3>Problem Solver</h3>
-                <p>Analyze, debug and find efficient solutions</p>
+                <h3>Query Optimization</h3>
+                <p>SQL Server stored procedures, triggers, indexes &amp; low latency</p>
               </div>
             </div>
 
-            <!-- 3. Team Player -->
+            <!-- 3. API & Enterprise Integration -->
+            <div class="highlight-card-box">
+              <div class="hl-circle-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                </svg>
+              </div>
+              <div class="hl-info-text">
+                <h3>REST API Engineering</h3>
+                <p>ASP.NET Core Web API, Postman, Swagger, RBAC &amp; data validation</p>
+              </div>
+            </div>
+
+            <!-- 4. Agile Delivery -->
             <div class="highlight-card-box">
               <div class="hl-circle-icon">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1630,21 +2306,8 @@
                 </svg>
               </div>
               <div class="hl-info-text">
-                <h3>Team Player</h3>
-                <p>Work well with teams and communicate clearly</p>
-              </div>
-            </div>
-
-            <!-- 4. Continuous Learner -->
-            <div class="highlight-card-box">
-              <div class="hl-circle-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-                </svg>
-              </div>
-              <div class="hl-info-text">
-                <h3>Continuous Learner</h3>
-                <p>Always eager to learn new technologies</p>
+                <h3>Agile / Scrum</h3>
+                <p>Sprint planning, daily stand-ups, backlog grooming &amp; code reviews</p>
               </div>
             </div>
           </div>
@@ -1653,96 +2316,193 @@
     </section>
 
     <!-- ==========================================================================
-         TECHNICAL SKILLS SECTION
+         TECHNICAL SKILLS SECTION (All 8 Recruiter Categories in Clean Grid)
          ========================================================================== -->
     <section class="section-wrap" id="skills" style="background-color: var(--section-alt);">
       <div class="container">
         <div class="section-header-block">
-          <div class="section-circle-badge">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          <h2 class="section-title-text">Technical Skills</h2>
-        </div>
-
-        <div class="skills-grid-2col">
-          <!-- 1. Languages -->
-          <div class="tech-skill-item">
-            <div class="tech-skill-badge badge-code">
-              <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+          <div class="section-title-wrap">
+            <div class="section-circle-badge">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <div class="tech-skill-content">
-              <h3>Languages</h3>
-              <p>C#, SQL, JavaScript, TypeScript</p>
+            <div>
+              <span class="section-subtitle-tag">TECHNICAL COMPETENCIES</span>
+              <h2 class="section-title-text">Skills Matrix</h2>
+            </div>
+          </div>
+
+          <!-- Recruiter Skill Keyword Filter Search -->
+          <div class="skills-filter-bar">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+            <input type="text" id="skillSearchInput" placeholder="Filter skills (e.g. C#, EF Core, Angular, SQL Server, IIS)..." oninput="filterSkills(this.value)" />
+          </div>
+        </div>
+
+        <!-- 8 Skill Cards Grid (Matches Resume Structure Exactly) -->
+        <div class="skills-grid-8col" id="skillsGridContainer">
+          <!-- 1. Languages -->
+          <div class="tech-skill-card">
+            <div class="tech-card-header">
+              <div class="tech-skill-badge badge-blue">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>
+              </div>
+              <div>
+                <h3>Languages</h3>
+                <span>Core Programming</span>
+              </div>
+            </div>
+            <div class="tech-skill-pills">
+              <span class="skill-pill">C#</span>
+              <span class="skill-pill">SQL</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">TypeScript</span>
             </div>
           </div>
 
           <!-- 2. Backend -->
-          <div class="tech-skill-item">
-            <div class="tech-skill-badge badge-gear">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-              </svg>
+          <div class="tech-skill-card">
+            <div class="tech-card-header">
+              <div class="tech-skill-badge badge-emerald">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.75 5.1a3 3 0 012.4-1.1h7.7a3 3 0 012.4 1.1l2.1 3.45a4.5 4.5 0 01.9 2.7" /></svg>
+              </div>
+              <div>
+                <h3>Backend</h3>
+                <span>.NET Ecosystem</span>
+              </div>
             </div>
-            <div class="tech-skill-content">
-              <h3>Backend</h3>
-              <p>ASP.NET Core, ASP.NET MVC, Web API, EF Core, LINQ, ADO.NET, RESTful APIs</p>
+            <div class="tech-skill-pills">
+              <span class="skill-pill">ASP.NET Core</span>
+              <span class="skill-pill">ASP.NET MVC</span>
+              <span class="skill-pill">Web API</span>
+              <span class="skill-pill">Entity Framework Core</span>
+              <span class="skill-pill">LINQ</span>
+              <span class="skill-pill">ADO.NET</span>
+              <span class="skill-pill">RESTful APIs</span>
             </div>
           </div>
 
           <!-- 3. Frontend -->
-          <div class="tech-skill-item">
-            <div class="tech-skill-badge badge-monitor">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" />
-              </svg>
+          <div class="tech-skill-card">
+            <div class="tech-card-header">
+              <div class="tech-skill-badge badge-teal">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" /></svg>
+              </div>
+              <div>
+                <h3>Frontend</h3>
+                <span>Client &amp; SPA</span>
+              </div>
             </div>
-            <div class="tech-skill-content">
-              <h3>Frontend</h3>
-              <p>Angular, JavaScript, jQuery, AJAX, Bootstrap, HTML5, CSS3, Responsive UI</p>
+            <div class="tech-skill-pills">
+              <span class="skill-pill">Angular</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">jQuery</span>
+              <span class="skill-pill">AJAX</span>
+              <span class="skill-pill">Bootstrap</span>
+              <span class="skill-pill">HTML5</span>
+              <span class="skill-pill">CSS3</span>
+              <span class="skill-pill">Responsive UI Design</span>
             </div>
           </div>
 
           <!-- 4. Database -->
-          <div class="tech-skill-item">
-            <div class="tech-skill-badge badge-database">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-              </svg>
+          <div class="tech-skill-card">
+            <div class="tech-card-header">
+              <div class="tech-skill-badge badge-purple">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" /></svg>
+              </div>
+              <div>
+                <h3>Database</h3>
+                <span>RDBMS &amp; Optimization</span>
+              </div>
             </div>
-            <div class="tech-skill-content">
-              <h3>Database</h3>
-              <p>SQL Server, Stored Procedures, Triggers, Indexes, Query Optimization</p>
-            </div>
-          </div>
-
-          <!-- 5. Architecture & Testing -->
-          <div class="tech-skill-item">
-            <div class="tech-skill-badge badge-wrench">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5v1.409l4.242 4.243" />
-              </svg>
-            </div>
-            <div class="tech-skill-content">
-              <h3>Architecture &amp; Quality</h3>
-              <p>Layered Architecture, Design Patterns, OOP, CRUD, Exception Handling, Unit Testing</p>
+            <div class="tech-skill-pills">
+              <span class="skill-pill">Microsoft SQL Server</span>
+              <span class="skill-pill">Stored Procedures</span>
+              <span class="skill-pill">Triggers</span>
+              <span class="skill-pill">Indexes</span>
+              <span class="skill-pill">SQL Query Optimization</span>
             </div>
           </div>
 
-          <!-- 6. Tools & Practices -->
-          <div class="tech-skill-item">
-            <div class="tech-skill-badge badge-cloud">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
-              </svg>
+          <!-- 5. Architecture -->
+          <div class="tech-skill-card">
+            <div class="tech-card-header">
+              <div class="tech-skill-badge badge-orange">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.143 2.143L15 7.5" /></svg>
+              </div>
+              <div>
+                <h3>Architecture</h3>
+                <span>Design &amp; Patterns</span>
+              </div>
             </div>
-            <div class="tech-skill-content">
-              <h3>Tools &amp; Development</h3>
-              <p>Visual Studio, VS Code, SSMS, Git, GitHub, IIS, Postman, Swagger, Agile/Scrum</p>
+            <div class="tech-skill-pills">
+              <span class="skill-pill">Layered Architecture</span>
+              <span class="skill-pill">Design Patterns</span>
+              <span class="skill-pill">OOP</span>
+              <span class="skill-pill">CRUD Operations</span>
+              <span class="skill-pill">Data Binding</span>
+              <span class="skill-pill">Exception Handling</span>
+            </div>
+          </div>
+
+          <!-- 6. Testing & API -->
+          <div class="tech-skill-card">
+            <div class="tech-card-header">
+              <div class="tech-skill-badge badge-red">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
+              </div>
+              <div>
+                <h3>Testing &amp; API</h3>
+                <span>Verification &amp; Docs</span>
+              </div>
+            </div>
+            <div class="tech-skill-pills">
+              <span class="skill-pill">Unit Testing</span>
+              <span class="skill-pill">Postman</span>
+              <span class="skill-pill">Swagger</span>
+            </div>
+          </div>
+
+          <!-- 7. Tools & Platforms -->
+          <div class="tech-skill-card">
+            <div class="tech-card-header">
+              <div class="tech-skill-badge badge-cyan">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5v1.409l4.242 4.243" /></svg>
+              </div>
+              <div>
+                <h3>Tools &amp; Platforms</h3>
+                <span>IDEs &amp; Servers</span>
+              </div>
+            </div>
+            <div class="tech-skill-pills">
+              <span class="skill-pill">Visual Studio</span>
+              <span class="skill-pill">VS Code</span>
+              <span class="skill-pill">SSMS</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub</span>
+              <span class="skill-pill">IIS</span>
+            </div>
+          </div>
+
+          <!-- 8. Development Practices -->
+          <div class="tech-skill-card">
+            <div class="tech-card-header">
+              <div class="tech-skill-badge badge-indigo">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <div>
+                <h3>Development</h3>
+                <span>Lifecycle &amp; Agile</span>
+              </div>
+            </div>
+            <div class="tech-skill-pills">
+              <span class="skill-pill">Agile/Scrum</span>
+              <span class="skill-pill">Application Support</span>
+              <span class="skill-pill">API Integration</span>
+              <span class="skill-pill">Third-Party Service Integration</span>
             </div>
           </div>
         </div>
@@ -1750,194 +2510,120 @@
     </section>
 
     <!-- ==========================================================================
-         SIDE-BY-SIDE: PROFESSIONAL EXPERIENCE (LEFT) & FEATURED PROJECTS (RIGHT)
+         PROFESSIONAL EXPERIENCE SECTION (Full-Width, Clear Alignment)
          ========================================================================== -->
     <section class="section-wrap" id="experience">
-      <div class="container exp-projects-split-layout">
-        <!-- LEFT: Professional Experience -->
-        <div>
-          <div class="section-header-block">
+      <div class="container">
+        <div class="section-header-block">
+          <div class="section-title-wrap">
             <div class="section-circle-badge">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
               </svg>
             </div>
-            <h2 class="section-title-text">Professional Experience</h2>
-          </div>
-
-          <div class="timeline-track-wrap">
-            <div class="exp-entry-node">
-              <div class="exp-bullet-dot"></div>
-
-              <div class="exp-entry-card">
-                <div class="exp-top-heading">
-                  <h3>Software Engineer</h3>
-                  <span class="exp-date-pill">Feb 2025 – Present</span>
-                </div>
-
-                <div class="exp-role-text" style="color:var(--text-dark); font-weight:800; margin-bottom:2px;">Sumeru Infotech Pvt. Ltd., Pune</div>
-
-                <div class="exp-location-row">
-                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                  </svg>
-                  <span>Pune, Maharashtra, India</span>
-                </div>
-
-                <ul class="exp-bullets-list">
-                  <li>Developed and maintained web and desktop applications using ASP.NET MVC, ASP.NET Core, WinForms, Web Forms, ADO.NET, C# and SQL Server.</li>
-                  <li>Architected and integrated RESTful APIs while contributing to database migrations, IIS hosting, production deployment, debugging and application maintenance.</li>
-                  <li>Implemented localization, dynamic report generation/export, role-based authorization, CRUD permissions, validation, global state and exception handling.</li>
-                  <li>Designed layered application architecture using OOP principles and reusable components.</li>
-                  <li>Built dynamic MVC interfaces with Views, Partial Views, Layouts, Sections and Areas.</li>
-                  <li>Optimized SQL queries, stored procedures, triggers and indexes to improve database performance.</li>
-                  <li>Implemented Entity Framework Core and LINQ for data access and query handling.</li>
-                  <li>Developed responsive frontend functionality using Angular, JavaScript, jQuery, AJAX and Bootstrap.</li>
-                  <li>Worked in Agile/Scrum processes including sprint planning, stand-ups, backlog grooming and code reviews.</li>
-                </ul>
-
-                <div class="exp-tech-stack-row">
-                  <strong>Technologies:</strong> C#, ASP.NET MVC, ASP.NET Core, Web API, ADO.NET, Entity Framework Core, LINQ, Angular, JavaScript, jQuery, SQL Server, IIS, WinForms.
-                </div>
-              </div>
+            <div>
+              <span class="section-subtitle-tag">WORK HISTORY</span>
+              <h2 class="section-title-text">Professional Experience</h2>
             </div>
           </div>
         </div>
 
-        <!-- RIGHT: Featured Projects (List Style with Arrow Buttons) -->
-        <div id="projects">
-          <div class="section-header-block">
-            <div class="section-circle-badge square-type">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-              </svg>
+        <!-- Experience Main Card -->
+        <div class="exp-main-card">
+          <div class="exp-header-row">
+            <div class="exp-title-block">
+              <h3>Software Engineer</h3>
+              <div class="exp-company-line">
+                <span>Sumeru Infotech Pvt. Ltd.</span>
+                <span>•</span>
+                <span style="color:var(--text-muted); font-size:0.95rem; font-weight:600;">Pune, Maharashtra</span>
+              </div>
             </div>
-            <h2 class="section-title-text">Featured Projects</h2>
+
+            <div class="exp-meta-badge-row">
+              <span class="exp-date-pill">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>
+                April 2025 – Present
+              </span>
+              <span class="exp-loc-pill">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                Pune, Maharashtra, India
+              </span>
+            </div>
           </div>
 
-          <div class="featured-projects-column">
-            <!-- Project 1: SRuralRoots -->
-            <div class="project-row-item" onclick="openProjectModal(1)" role="button" tabindex="0" aria-label="View SRuralRoots architecture and project details">
-              <div class="proj-row-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                </svg>
-              </div>
-
-              <div class="proj-row-info">
-                <div class="proj-tag-eyebrow">01 / WEB APPLICATION</div>
-                <h3>SRuralRoots</h3>
-                <p class="proj-summary">Multi-role enterprise web application with dynamic dashboards, Highcharts analytics, reporting grids and multi-format data exports.</p>
-                <div class="proj-tags-line">
-                  <span class="proj-tag-chip">ASP.NET MVC</span>
-                  <span class="proj-tag-chip">C#</span>
-                  <span class="proj-tag-chip">SQL Server</span>
-                  <span class="proj-tag-chip">ADO.NET</span>
-                  <span class="proj-tag-chip">jQuery</span>
-                  <span class="proj-tag-chip">Highcharts</span>
-                </div>
-                <div class="proj-card-footer-cta">
-                  <span>Click to view full architecture &amp; module breakdown</span>
-                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </div>
-              </div>
-
-              <button class="proj-circle-arrow" aria-label="Open SRuralRoots details" onclick="event.stopPropagation(); openProjectModal(1)">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
+          <!-- Structured Bullet Grid for Recruiter Readability -->
+          <div class="exp-bullets-container">
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>Application Engineering:</strong> Developed and maintained web and desktop applications using ASP.NET MVC, ASP.NET Core, WinForms, Web Forms, ADO.NET, C#, and SQL Server.</span>
             </div>
 
-            <!-- Project 2: SSProbe -->
-            <div class="project-row-item" onclick="openProjectModal(2)" role="button" tabindex="0" aria-label="View SSProbe architecture and project details">
-              <div class="proj-row-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                </svg>
-              </div>
-
-              <div class="proj-row-info">
-                <div class="proj-tag-eyebrow">02 / FULL STACK</div>
-                <h3>SSProbe</h3>
-                <p class="proj-summary">Full stack web application combining ASP.NET Core RESTful Web APIs with responsive Angular components and EF Core data access.</p>
-                <div class="proj-tags-line">
-                  <span class="proj-tag-chip">ASP.NET Core</span>
-                  <span class="proj-tag-chip">Web API</span>
-                  <span class="proj-tag-chip">Angular</span>
-                  <span class="proj-tag-chip">EF Core</span>
-                  <span class="proj-tag-chip">LINQ</span>
-                  <span class="proj-tag-chip">SQL Server</span>
-                </div>
-                <div class="proj-card-footer-cta">
-                  <span>Click to view full architecture &amp; module breakdown</span>
-                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </div>
-              </div>
-
-              <button class="proj-circle-arrow" aria-label="Open SSProbe details" onclick="event.stopPropagation(); openProjectModal(2)">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>API Architecture &amp; Lifecycle:</strong> Architected and integrated scalable RESTful APIs while managing end-to-end system lifecycles, including database migrations, IIS hosting, production deployments, system debugging, and continuous application maintenance.</span>
             </div>
 
-            <!-- Project 3: SSBridge -->
-            <div class="project-row-item" onclick="openProjectModal(3)" role="button" tabindex="0" aria-label="View SSBridge architecture and project details">
-              <div class="proj-row-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-                </svg>
-              </div>
-
-              <div class="proj-row-info">
-                <div class="proj-tag-eyebrow">03 / DESKTOP</div>
-                <h3>SSBridge</h3>
-                <p class="proj-summary">Desktop CRM application built with C# WinForms, ADO.NET and SQL Server, enforcing layered architecture and stored procedure execution.</p>
-                <div class="proj-tags-line">
-                  <span class="proj-tag-chip">C#</span>
-                  <span class="proj-tag-chip">WinForms</span>
-                  <span class="proj-tag-chip">SQL Server</span>
-                  <span class="proj-tag-chip">ADO.NET</span>
-                  <span class="proj-tag-chip">Stored Procedures</span>
-                  <span class="proj-tag-chip">OOP</span>
-                </div>
-                <div class="proj-card-footer-cta">
-                  <span>Click to view full architecture &amp; module breakdown</span>
-                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </div>
-              </div>
-
-              <button class="proj-circle-arrow" aria-label="Open SSBridge details" onclick="event.stopPropagation(); openProjectModal(3)">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-              </button>
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>Enterprise Features &amp; Security:</strong> Implemented advanced enterprise features including localization, dynamic report generation and export, role-based authorization (RBAC), strict CRUD permissions, data validation, and global state and exception handling.</span>
             </div>
 
-            <!-- Bottom Action Card -->
-            <div class="view-all-projects-card" onclick="openProjectModal(1)" role="button" tabindex="0" style="cursor: pointer;" aria-label="Explore interactive project deep dive">
-              <div class="view-all-icon">
-                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-                </svg>
-              </div>
-              <div class="view-all-text">
-                <h4>Explore Full Project Architecture &amp; Case Studies</h4>
-                <p>Click any project above or here to open the in-depth technical modal</p>
-              </div>
-              <div style="margin-left: auto; color: var(--primary);">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-              </div>
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>Layered Architecture &amp; OOP:</strong> Designed and implemented layered application architecture using OOP principles and reusable components to enhance scalability, maintainability, and modular development.</span>
+            </div>
+
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>Dynamic MVC Views:</strong> Developed dynamic ASP.NET MVC user interfaces using Views, Partial Views, Layouts, Sections, and Areas.</span>
+            </div>
+
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>Database Performance Tuning:</strong> Optimized SQL Server queries, stored procedures, triggers, and indexes to improve database performance and reduce transaction latency.</span>
+            </div>
+
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>ORM &amp; Efficient Data Access:</strong> Implemented Entity Framework Core and LINQ for efficient data access, query handling, and database interaction.</span>
+            </div>
+
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>Frontend Interactivity:</strong> Developed responsive and interactive front-end functionality using Angular, JavaScript, jQuery, AJAX, and Bootstrap.</span>
+            </div>
+
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>Agile &amp; Scrum Delivery:</strong> Participated in Agile/Scrum development processes, including sprint planning, daily stand-ups, backlog grooming, and code reviews.</span>
+            </div>
+
+            <div class="exp-bullet-item">
+              <span class="exp-bullet-check"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg></span>
+              <span><strong>Deployment &amp; Tooling:</strong> Utilized Git, GitHub, Postman, Swagger, and IIS for version control, collaborative development, API testing, documentation, and production deployment.</span>
+            </div>
+          </div>
+
+          <!-- Technologies Strip -->
+          <div class="exp-tech-summary-box">
+            <span class="exp-tech-label">Applied Technologies:</span>
+            <div class="exp-tech-pills-row">
+              <span class="exp-tech-chip">C#</span>
+              <span class="exp-tech-chip">ASP.NET Core</span>
+              <span class="exp-tech-chip">ASP.NET MVC</span>
+              <span class="exp-tech-chip">Web API</span>
+              <span class="exp-tech-chip">Entity Framework Core</span>
+              <span class="exp-tech-chip">LINQ</span>
+              <span class="exp-tech-chip">ADO.NET</span>
+              <span class="exp-tech-chip">SQL Server</span>
+              <span class="exp-tech-chip">Angular</span>
+              <span class="exp-tech-chip">JavaScript</span>
+              <span class="exp-tech-chip">jQuery</span>
+              <span class="exp-tech-chip">AJAX</span>
+              <span class="exp-tech-chip">Bootstrap</span>
+              <span class="exp-tech-chip">IIS</span>
+              <span class="exp-tech-chip">WinForms</span>
             </div>
           </div>
         </div>
@@ -1945,21 +2631,178 @@
     </section>
 
     <!-- ==========================================================================
-         EDUCATION & CERTIFICATIONS / ACHIEVEMENTS
+         KEY PROJECTS SECTION (Uniform 3-Column Recruiter Friendly Grid)
          ========================================================================== -->
-    <section class="section-wrap" id="education" style="background-color: var(--section-alt);">
-      <div class="container edu-cert-2col">
-        <!-- Education -->
-        <div>
-          <div class="section-header-block">
+    <section class="section-wrap" id="projects" style="background-color: var(--section-alt);">
+      <div class="container">
+        <div class="section-header-block">
+          <div class="section-title-wrap">
+            <div class="section-circle-badge square-type">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+              </svg>
+            </div>
+            <div>
+              <span class="section-subtitle-tag">PORTFOLIO DELIVERABLES</span>
+              <h2 class="section-title-text">Key Projects</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Aligned Project Cards -->
+        <div class="projects-grid-3col">
+          <!-- 1. SSProbe -->
+          <div class="project-card-full" onclick="openProjectModal(1)" role="button" tabindex="0" aria-label="View SSProbe architecture and project details">
+            <div class="proj-card-top">
+              <div class="proj-badge-row">
+                <span class="proj-cat-tag tag-blue">FULL STACK &bull; WEB API</span>
+                <div class="proj-card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                </div>
+              </div>
+
+              <div class="proj-card-title">
+                <span>SSProbe</span>
+                <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted);">01</span>
+              </div>
+
+              <p class="proj-card-desc">
+                Full-stack web application developed using ASP.NET Core Web API and Angular with layered architecture, LINQ data queries, and SQL Server backend.
+              </p>
+
+              <div class="proj-tech-stack-row">
+                <span class="proj-tech-badge">ASP.NET Core Web API</span>
+                <span class="proj-tech-badge">Angular</span>
+                <span class="proj-tech-badge">C#</span>
+                <span class="proj-tech-badge">EF Core</span>
+                <span class="proj-tech-badge">LINQ</span>
+                <span class="proj-tech-badge">SQL Server</span>
+                <span class="proj-tech-badge">REST API</span>
+              </div>
+
+              <ul class="proj-highlights-list">
+                <li>Developed RESTful APIs, CRUD operations &amp; business logic layers.</li>
+                <li>Built Angular components and services for reactive API integration.</li>
+                <li>Layered architecture across Controller, Service, Repository &amp; Database.</li>
+                <li>Tested and debugged APIs using Swagger and Postman.</li>
+              </ul>
+            </div>
+
+            <div class="proj-card-footer">
+              <span>View Full Architecture &amp; Pipeline</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            </div>
+          </div>
+
+          <!-- 2. SRuralRoots -->
+          <div class="project-card-full" onclick="openProjectModal(2)" role="button" tabindex="0" aria-label="View SRuralRoots architecture and project details">
+            <div class="proj-card-top">
+              <div class="proj-badge-row">
+                <span class="proj-cat-tag tag-green">ENTERPRISE WEB &bull; MVC</span>
+                <div class="proj-card-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>
+                </div>
+              </div>
+
+              <div class="proj-card-title">
+                <span>SRuralRoots</span>
+                <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted);">02</span>
+              </div>
+
+              <p class="proj-card-desc">
+                Multi-role enterprise web application engineered with ASP.NET MVC, ADO.NET and Highcharts dashboards with multi-format export pipelines.
+              </p>
+
+              <div class="proj-tech-stack-row">
+                <span class="proj-tech-badge">ASP.NET MVC</span>
+                <span class="proj-tech-badge">C#</span>
+                <span class="proj-tech-badge">SQL Server</span>
+                <span class="proj-tech-badge">ADO.NET</span>
+                <span class="proj-tech-badge">Highcharts</span>
+                <span class="proj-tech-badge">DataTables</span>
+                <span class="proj-tech-badge">jQuery / AJAX</span>
+              </div>
+
+              <ul class="proj-highlights-list">
+                <li>Led technical development and coordinated multi-module delivery.</li>
+                <li>Built interactive Highcharts dashboard with weekly/monthly/yearly filters.</li>
+                <li>Developed dynamic DataTables reporting with Excel, PDF, CSV &amp; Print exports.</li>
+                <li>Maintained flag-based stored procedures and optimized database joins.</li>
+              </ul>
+            </div>
+
+            <div class="proj-card-footer">
+              <span>View Full Architecture &amp; Pipeline</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            </div>
+          </div>
+
+          <!-- 3. SSBridge -->
+          <div class="project-card-full" onclick="openProjectModal(3)" role="button" tabindex="0" aria-label="View SSBridge architecture and project details">
+            <div class="proj-card-top">
+              <div class="proj-badge-row">
+                <span class="proj-cat-tag tag-purple">DESKTOP CRM &bull; WINFORMS</span>
+                <div class="proj-card-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+                </div>
+              </div>
+
+              <div class="proj-card-title">
+                <span>SSBridge</span>
+                <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted);">03</span>
+              </div>
+
+              <p class="proj-card-desc">
+                Desktop-based CRM application built with C# WinForms, ADO.NET and SQL Server, enforcing layered architecture and stored procedure execution.
+              </p>
+
+              <div class="proj-tech-stack-row">
+                <span class="proj-tech-badge">C#</span>
+                <span class="proj-tech-badge">WinForms</span>
+                <span class="proj-tech-badge">SQL Server</span>
+                <span class="proj-tech-badge">ADO.NET</span>
+                <span class="proj-tech-badge">Stored Procedures</span>
+                <span class="proj-tech-badge">OOP</span>
+              </div>
+
+              <ul class="proj-highlights-list">
+                <li>Developed CRUD operations and database access methods using OOP.</li>
+                <li>Built resilient data-loading functionality via DataSet and DataTable.</li>
+                <li>Applied class-based architecture to separate UI, business logic &amp; DB.</li>
+                <li>Implemented exception handling, DBNull handling &amp; transaction safety.</li>
+              </ul>
+            </div>
+
+            <div class="proj-card-footer">
+              <span>View Full Architecture &amp; Pipeline</span>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EDUCATION & ACHIEVEMENTS SECTION (Balanced 2-Column Recruiter Alignment)
+         ========================================================================== -->
+    <section class="section-wrap" id="education">
+      <div class="container">
+        <div class="section-header-block">
+          <div class="section-title-wrap">
             <div class="section-circle-badge">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.75 8.35v1.312c0 .354.187.682.492.863A23.834 23.834 0 0012 21a23.834 23.834 0 007.258-1.032.999.999 0 00.492-.863v-1.312m-15.5 0a48.74 48.74 0 0015.5 0" />
               </svg>
             </div>
-            <h2 class="section-title-text">Education</h2>
+            <div>
+              <span class="section-subtitle-tag">CREDENTIALS</span>
+              <h2 class="section-title-text">Education &amp; Achievements</h2>
+            </div>
           </div>
+        </div>
 
+        <div class="edu-cert-2col">
+          <!-- Education Card -->
           <div class="bottom-info-card">
             <div class="bottom-info-icon-badge">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1969,32 +2812,21 @@
             <div class="bottom-info-details">
               <h3>B.Tech – Electronics &amp; Telecommunication</h3>
               <div class="sub">Dr. Babasaheb Ambedkar Technological University, Lonere</div>
-              <div class="meta">2020 – 2024 · Grade A</div>
+              <div class="meta">2020 – 2024 &bull; Grade: A</div>
             </div>
           </div>
-        </div>
 
-        <!-- Certifications / Achievements -->
-        <div>
-          <div class="section-header-block">
-            <div class="section-circle-badge">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.496m5.007 0a7.454 7.454 0 01-.982-3.172M9.496 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.77 1.35m8.25-6.842c.98.143 1.953.317 2.916.52a6.002 6.002 0 01-5.405 4.972m2.489-5.492V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.228h-.001m-2.48 5.228a6.726 6.726 0 01-2.77 1.35" />
-              </svg>
-            </div>
-            <h2 class="section-title-text">Achievement</h2>
-          </div>
-
+          <!-- Achievements Card -->
           <div class="bottom-info-card">
-            <div class="bottom-info-icon-badge" style="background: #ecfdf5; color: #059669;">
+            <div class="bottom-info-icon-badge" style="background: #fef3c7; color: #d97706;">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.496m5.007 0a7.454 7.454 0 01-.982-3.172M9.496 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.77 1.35m8.25-6.842c.98.143 1.953.317 2.916.52a6.002 6.002 0 01-5.405 4.972m2.489-5.492V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.228h-.001m-2.48 5.228a6.726 6.726 0 01-2.77 1.35" />
               </svg>
             </div>
             <div class="bottom-info-details">
               <h3>Runner-up – National Level Hackathon 2023</h3>
-              <div class="sub">Software Edition</div>
-              <div class="meta">Full-Stack Application &amp; Engineering Solution</div>
+              <div class="sub">Software Edition &bull; Dr. Babasaheb Ambedkar Technological University</div>
+              <div class="meta" style="background:#fef3c7; color:#b45309;">Software Engineering Excellence</div>
             </div>
           </div>
         </div>
@@ -2004,31 +2836,44 @@
     <!-- ==========================================================================
          CONTACT / CONNECT SECTION
          ========================================================================== -->
-    <section class="section-wrap" id="contact">
+    <section class="section-wrap" id="contact" style="background-color: var(--section-alt); border-bottom: none;">
       <div class="container">
-        <div style="background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%); border-radius: var(--radius-xl); padding: 48px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; box-shadow: var(--shadow-lg);">
-          <div style="max-width: 560px;">
-            <div style="font-size: 0.85rem; font-weight: 800; color: #a7f3d0; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 8px;">Let's Connect</div>
-            <h2 style="color: #ffffff; font-size: 2.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 12px;">Have a role that matches my stack?</h2>
-            <p style="color: #d1fae5; font-size: 0.95rem; line-height: 1.65;">
-              I’m open to opportunities where I can contribute to backend engineering, full-stack application development, APIs, database-driven systems and scalable enterprise software.
+        <div class="contact-banner-card">
+          <div class="contact-left-info">
+            <div class="contact-sub-eyebrow">Direct Recruiter Contact</div>
+            <h2 class="contact-heading">Looking for a Skilled .NET Developer?</h2>
+            <p class="contact-desc">
+              I am open to full-time roles in Pune or remote/hybrid settings where I can contribute to scalable .NET Core backend APIs, responsive frontends with Angular, and high-performance database architectures.
             </p>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 12px; min-width: 280px;">
-            <a href="mailto:mohanishguru111@gmail.com" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 12px 18px; border-radius: var(--radius-md); color: #ffffff; font-size: 0.9rem; font-weight: 500; transition: var(--transition);">
-              <svg width="18" height="18" fill="none" stroke="#a7f3d0" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-              </svg>
-              <span>mohanishguru111@gmail.com</span>
+          <div class="contact-action-tray">
+            <!-- Email Action -->
+            <a href="mailto:mohanishguru111@gmail.com?subject=Job%20Opportunity%20-%20Mohanish%20Guru%20(.NET%20Developer)" class="contact-btn-box">
+              <div class="contact-btn-inner">
+                <svg width="20" height="20" fill="none" stroke="#a7f3d0" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                <span>mohanishguru111@gmail.com</span>
+              </div>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
             </a>
 
-            <a href="tel:+919225314839" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 12px 18px; border-radius: var(--radius-md); color: #ffffff; font-size: 0.9rem; font-weight: 500; transition: var(--transition);">
-              <svg width="18" height="18" fill="none" stroke="#a7f3d0" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-              </svg>
-              <span>+91 9225314839</span>
+            <!-- Phone Action -->
+            <a href="tel:+919225314839" class="contact-btn-box">
+              <div class="contact-btn-inner">
+                <svg width="20" height="20" fill="none" stroke="#a7f3d0" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+                <span>+91 9225314839</span>
+              </div>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
             </a>
+
+            <!-- Location Note -->
+            <div style="font-size:0.84rem; color:#a7f3d0; text-align:center; padding-top:4px;">
+              📍 Pune, Maharashtra, India &bull; Immediate Joiner / Open to Interviews
+            </div>
           </div>
         </div>
       </div>
@@ -2046,8 +2891,8 @@
               <!-- Dynamically populated icon -->
             </div>
             <div class="modal-title-wrap">
-              <span class="modal-cat-badge" id="modalProjCategory">01 / WEB APPLICATION</span>
-              <h2 id="modalProjectTitle">SRuralRoots</h2>
+              <span class="modal-cat-badge" id="modalProjCategory">01 / FULL STACK</span>
+              <h2 id="modalProjectTitle">SSProbe</h2>
               <div class="modal-company-sub">
                 <span id="modalProjCompany">Sumeru Infotech Pvt. Ltd., Pune</span>
                 <span>•</span>
@@ -2066,9 +2911,9 @@
 
         <!-- Project Switcher Tab Strip -->
         <div class="modal-switcher-strip">
-          <button class="modal-switcher-tab active" id="tabProj1" onclick="switchProjectModal(1)">01 · SRuralRoots</button>
-          <button class="modal-switcher-tab" id="tabProj2" onclick="switchProjectModal(2)">02 · SSProbe</button>
-          <button class="modal-switcher-tab" id="tabProj3" onclick="switchProjectModal(3)">03 · SSBridge</button>
+          <button class="modal-switcher-tab active" id="tabProj1" onclick="switchProjectModal(1)">01 &bull; SSProbe</button>
+          <button class="modal-switcher-tab" id="tabProj2" onclick="switchProjectModal(2)">02 &bull; SRuralRoots</button>
+          <button class="modal-switcher-tab" id="tabProj3" onclick="switchProjectModal(3)">03 &bull; SSBridge</button>
         </div>
 
         <!-- Scrollable Project Details Body -->
@@ -2101,6 +2946,137 @@
         </div>
       </div>
     </div>
+
+    <!-- ==========================================================================
+         RECRUITER RESUME MODAL (ATS Standard Format)
+         ========================================================================== -->
+    <div class="resume-modal-backdrop" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeDocName" onclick="closeResumeModal()">
+      <div class="resume-modal-container" onclick="event.stopPropagation()">
+        <div class="resume-modal-header">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <svg width="20" height="20" fill="none" stroke="var(--primary)" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+            <strong style="font-size:0.95rem; color:var(--text-dark);">Candidate Resume &bull; ATS Format Preview</strong>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <button onclick="window.print()" class="modal-action-btn" title="Print or Save as PDF">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24-1.076-.673-2.038-1.258-2.83M12 21V11.25m0 0l-3 3m3-3l3 3M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5" /></svg>
+              <span>Print / Save PDF</span>
+            </button>
+            <button class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close resume preview">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="resume-paper-body">
+          <div class="res-doc-header">
+            <h1 class="res-doc-name" id="resumeDocName">Mohanish Guru</h1>
+            <div class="res-doc-title">Software Engineer | .NET Full Stack Developer</div>
+            <div class="res-doc-contact">
+              <span><strong>Phone:</strong> +91 9225314839</span>
+              <span>&bull;</span>
+              <span><strong>Email:</strong> mohanishguru111@gmail.com</span>
+              <span>&bull;</span>
+              <span><strong>Location:</strong> Pune, Maharashtra</span>
+            </div>
+          </div>
+
+          <div class="res-section-title">Professional Summary</div>
+          <p style="font-size:0.9rem; line-height:1.65; color:#334155;">
+            .NET Full Stack Developer with 1.5+ years of experience designing, developing, and maintaining scalable web and desktop applications using C#, ASP.NET Core, ASP.NET MVC, Web API, Entity Framework Core, LINQ, ADO.NET, and SQL Server. Proven expertise in RESTful API development, layered architecture, object-oriented programming, database-driven applications, SQL query optimization, and reusable component design. Skilled in building responsive front-end interfaces with Angular, JavaScript, jQuery, AJAX, Bootstrap, HTML5, and CSS3. Experienced in Agile/Scrum methodologies, application support, API testing, reporting automation, and production deployment on IIS.
+          </p>
+
+          <div class="res-section-title">Technical Skills</div>
+          <div style="font-size:0.88rem; line-height:1.7; color:#334155;">
+            <div><strong>Languages:</strong> C#, SQL, JavaScript, TypeScript</div>
+            <div><strong>Backend:</strong> ASP.NET Core, ASP.NET MVC, Web API, Entity Framework Core, LINQ, ADO.NET, RESTful APIs</div>
+            <div><strong>Frontend:</strong> Angular, JavaScript, jQuery, AJAX, Bootstrap, HTML5, CSS3, Responsive UI Design</div>
+            <div><strong>Database:</strong> Microsoft SQL Server, Stored Procedures, Triggers, Indexes, SQL Query Optimization</div>
+            <div><strong>Architecture:</strong> Layered Architecture, Design Patterns, OOP, CRUD, Data Binding, Exception Handling</div>
+            <div><strong>Testing &amp; API:</strong> Unit Testing, Postman, Swagger</div>
+            <div><strong>Tools &amp; Platforms:</strong> Visual Studio, VS Code, SSMS, Git, GitHub, IIS</div>
+            <div><strong>Development:</strong> Agile/Scrum, Application Support, API Integration, Third-Party Service Integration</div>
+          </div>
+
+          <div class="res-section-title">Professional Experience</div>
+          <div style="margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; font-weight:800; font-size:0.95rem;">
+              <span>Software Engineer &bull; Sumeru Infotech Pvt. Ltd., Pune</span>
+              <span>April 2025 – Present</span>
+            </div>
+            <ul class="res-bullets" style="margin-top:6px;">
+              <li>Developed and maintained web and desktop applications using ASP.NET MVC, ASP.NET Core, WinForms, Web Forms, ADO.NET, C#, and SQL Server.</li>
+              <li>Architected and integrated scalable RESTful APIs while managing end-to-end system lifecycles, including database migrations, IIS hosting, production deployments, system debugging, and continuous application maintenance.</li>
+              <li>Implemented advanced enterprise features including localization, dynamic report generation and export, role-based authorization (RBAC), strict CRUD permissions, data validation, and global state and exception handling.</li>
+              <li>Designed and implemented layered application architecture using OOP principles and reusable components to enhance scalability, maintainability, and modular development.</li>
+              <li>Developed dynamic ASP.NET MVC user interfaces using Views, Partial Views, Layouts, Sections, and Areas.</li>
+              <li>Optimized SQL Server queries, stored procedures, triggers, and indexes to improve database performance and reduce transaction latency.</li>
+              <li>Implemented Entity Framework Core and LINQ for efficient data access, query handling, and database interaction.</li>
+              <li>Developed responsive and interactive front-end functionality using Angular, JavaScript, jQuery, AJAX, and Bootstrap.</li>
+              <li>Participated in Agile/Scrum development processes, including sprint planning, daily stand-ups, backlog grooming, and code reviews.</li>
+              <li>Utilized Git, GitHub, Postman, Swagger, and IIS for version control, collaborative development, API testing, documentation, and production deployment.</li>
+            </ul>
+          </div>
+
+          <div class="res-section-title">Key Projects</div>
+          <div style="margin-bottom:14px;">
+            <div style="font-weight:800; font-size:0.92rem;">SSProbe</div>
+            <div style="font-size:0.82rem; color:#059669; font-weight:700; margin-bottom:4px;">Technology Stack: ASP.NET Core Web API, Angular, C#, SQL Server, Entity Framework Core, LINQ, Bootstrap, REST API</div>
+            <ul class="res-bullets">
+              <li>Developed a web-based application using ASP.NET Core Web API and Angular in a collaborative team environment.</li>
+              <li>Developed RESTful APIs, CRUD operations, business logic, and data access layers using Entity Framework Core and LINQ.</li>
+              <li>Built Angular components and services for API integration, data binding, and form validation.</li>
+              <li>Worked with SQL Server queries, stored procedures, triggers, and indexes for reliable data management.</li>
+              <li>Followed layered architecture across Controller, Service, Repository, and Database components.</li>
+              <li>Tested and debugged APIs using Swagger and Postman and implemented structured error-handling mechanisms.</li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <div style="font-weight:800; font-size:0.92rem;">SRuralRoots</div>
+            <div style="font-size:0.82rem; color:#059669; font-weight:700; margin-bottom:4px;">Technology Stack: ASP.NET MVC, C#, SQL Server, ADO.NET, jQuery, AJAX, Bootstrap, Highcharts, DataTables</div>
+            <ul class="res-bullets">
+              <li>Led development and technical implementation of a multi-role web application.</li>
+              <li>Coordinated team development activities, module integration, debugging, and technical delivery across application modules.</li>
+              <li>Developed interactive dashboard functionality for booking, revenue, subscription, and operational metrics.</li>
+              <li>Implemented interactive Highcharts dashboards supporting weekly, monthly, and yearly data filtering.</li>
+              <li>Developed data-driven reports using jQuery, AJAX, and DataTables with date-range filtering.</li>
+              <li>Designed and maintained flag-based stored procedure logic for optimized database operations.</li>
+              <li>Implemented SQL joins, aggregate functions, and date-based filtering with report export functionality for Excel, PDF, CSV, and Print.</li>
+            </ul>
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <div style="font-weight:800; font-size:0.92rem;">SSBridge</div>
+            <div style="font-size:0.82rem; color:#059669; font-weight:700; margin-bottom:4px;">Technology Stack: C#, WinForms, SQL Server, ADO.NET, Stored Procedures, OOP</div>
+            <ul class="res-bullets">
+              <li>Developed a desktop-based CRM application using C# WinForms, ADO.NET, and SQL Server.</li>
+              <li>Implemented CRUD operations, database access methods, and stored procedure execution for application modules.</li>
+              <li>Developed data-loading functionality using DataSet, DataTable, and stored procedures.</li>
+              <li>Applied Object-Oriented Programming (OOP) and class-based architecture to separate UI, business logic, and database operations.</li>
+              <li>Implemented exception handling, DBNull handling, and application-level error management.</li>
+            </ul>
+          </div>
+
+          <div class="res-section-title">Education</div>
+          <div style="display:flex; justify-content:space-between; font-weight:700; font-size:0.9rem;">
+            <span>B.Tech – Electronics &amp; Telecommunication &bull; Dr. Babasaheb Ambedkar Technological University, Lonere</span>
+            <span>2020 – 2024 &bull; Grade: A</span>
+          </div>
+
+          <div class="res-section-title">Achievements</div>
+          <div style="font-size:0.88rem; color:#334155;">
+            <strong>Runner-up – National Level Hackathon 2023</strong> (Software Edition) &bull; Full-Stack Application &amp; Engineering Solution
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification Element -->
+    <div class="toast-msg" id="toastNotification">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+      <span id="toastText">Copied to clipboard!</span>
+    </div>
   </main>
 
   <!-- ==========================================================================
@@ -2112,13 +3088,13 @@
         <!-- Brand Info -->
         <div>
           <div class="footer-brand-title">Mohanish Guru</div>
-          <div class="footer-brand-subtitle">Full Stack .NET Developer</div>
+          <div class="footer-brand-subtitle">Software Engineer | .NET Full Stack Developer</div>
         </div>
 
         <!-- Links -->
         <ul class="footer-nav-links">
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#about">Summary</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -2126,15 +3102,15 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <!-- Social Icons -->
+        <!-- Social / Direct Action Icons -->
         <div class="footer-social-tray">
-          <a href="mailto:mohanishguru111@gmail.com" class="footer-icon-circle" aria-label="Email">
+          <a href="mailto:mohanishguru111@gmail.com" class="footer-icon-circle" aria-label="Email candidate" title="Email Mohanish Guru">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
             </svg>
           </a>
 
-          <a href="tel:+919225314839" class="footer-icon-circle" aria-label="Phone">
+          <a href="tel:+919225314839" class="footer-icon-circle" aria-label="Call candidate" title="Call Mohanish Guru">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
             </svg>
@@ -2143,7 +3119,7 @@
       </div>
 
       <div class="footer-copyright">
-        &copy; 2026 Mohanish Guru. All rights reserved. Full Stack .NET Developer.
+        &copy; 2026 Mohanish Guru. All rights reserved. Software Engineer | .NET Full Stack Developer.
       </div>
     </div>
   </footer>
@@ -2207,6 +3183,53 @@
       });
     });
 
+    // Copy to clipboard helper with toast
+    function copyContact(text, message) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(message);
+        }).catch(() => {
+          fallbackCopy(text, message);
+        });
+      } else {
+        fallbackCopy(text, message);
+      }
+    }
+
+    function fallbackCopy(text, message) {
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      showToast(message);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastText').innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    // Skills Live Filtering
+    function filterSkills(query) {
+      const q = query.trim().toLowerCase();
+      const pills = document.querySelectorAll('.skill-pill');
+      pills.forEach(pill => {
+        if (!q) {
+          pill.classList.remove('match-highlight');
+        } else if (pill.innerText.toLowerCase().includes(q)) {
+          pill.classList.add('match-highlight');
+        } else {
+          pill.classList.remove('match-highlight');
+        }
+      });
+    }
+
     // ==========================================================================
     // INTERACTIVE PROJECT DETAILS MODAL LOGIC
     // ==========================================================================
@@ -2214,77 +3237,80 @@
       1: {
         id: 1,
         number: "01",
-        category: "01 / WEB APPLICATION",
-        title: "SRuralRoots",
+        category: "01 / FULL STACK &bull; WEB API",
+        title: "SSProbe",
         company: "Sumeru Infotech Pvt. Ltd., Pune",
-        role: "Software Engineer · Technical Implementation",
-        gradient: "linear-gradient(135deg, #10b981, #059669)",
-        iconSvg: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>`,
-        summary: "Multi-role enterprise web application engineered with ASP.NET MVC, C# and SQL Server, featuring comprehensive operational dashboards, high-volume reporting, interactive data filtering and multi-format export capabilities.",
+        role: "Software Engineer &bull; Full Stack API &amp; Angular Development",
+        gradient: "linear-gradient(135deg, #3b82f6, #2563eb)",
+        iconSvg: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>`,
+        summary: "Web-based application engineered with ASP.NET Core Web API and Angular in a collaborative team setting, delivering layered RESTful endpoints, reactive frontend components, and robust Entity Framework Core data access.",
         bullets: [
-          "Led technical implementation and coordinated module integration across frontend views and backend controllers.",
-          "Built booking, revenue, subscription and operational dashboards tailored for distinct stakeholder roles.",
-          "Implemented Highcharts with weekly, monthly and yearly filtering for actionable business analytics.",
-          "Created AJAX and DataTables reporting grids with dynamic date-range filtering and pagination.",
-          "Implemented multi-format export pipelines supporting Excel, PDF, CSV and direct Print formats."
+          "Developed a web-based application using ASP.NET Core Web API and Angular in a collaborative team environment.",
+          "Developed RESTful APIs, CRUD operations, business logic, and data access layers using Entity Framework Core and LINQ.",
+          "Built Angular components and services for API integration, data binding, and form validation.",
+          "Worked with SQL Server queries, stored procedures, triggers, and indexes for reliable data management.",
+          "Followed layered architecture across Controller, Service, Repository, and Database components.",
+          "Tested and debugged APIs using Swagger and Postman and implemented structured error-handling mechanisms."
         ],
         architecture: [
-          { layer: "Presentation", title: "MVC Views", detail: "Razor, Partial Views, jQuery, Highcharts" },
-          { layer: "Controllers", title: "MVC Logic", detail: "Action Filters, Model Binding, Validation" },
-          { layer: "Data Access", title: "ADO.NET Layer", detail: "Optimized SQL Connection & DataReaders" },
-          { layer: "Database", title: "SQL Server", detail: "Stored Procedures, Indexes, Views" }
+          { layer: "Presentation", title: "Angular SPA", detail: "Components, Services, HTTPClient, Reactive Forms" },
+          { layer: "API / Gateway", title: "ASP.NET Core Web API", detail: "REST Controllers, Dependency Injection, Middleware" },
+          { layer: "Business / ORM", title: "EF Core & LINQ", detail: "Domain Logic, Repositories, Migrations" },
+          { layer: "Database", title: "SQL Server", detail: "Stored Procedures, Triggers, Performance Indexes" }
         ],
-        stack: ["ASP.NET MVC", "C#", "SQL Server", "ADO.NET", "jQuery", "Highcharts", "Bootstrap", "AJAX", "IIS"]
+        stack: ["ASP.NET Core Web API", "Angular", "C#", "SQL Server", "Entity Framework Core", "LINQ", "Bootstrap", "REST API", "Swagger", "Postman"]
       },
       2: {
         id: 2,
         number: "02",
-        category: "02 / FULL STACK",
-        title: "SSProbe",
+        category: "02 / ENTERPRISE WEB &bull; MVC",
+        title: "SRuralRoots",
         company: "Sumeru Infotech Pvt. Ltd., Pune",
-        role: "Software Engineer · Full Stack Development",
-        gradient: "linear-gradient(135deg, #3b82f6, #2563eb)",
-        iconSvg: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>`,
-        summary: "Full stack enterprise application combining high-performance ASP.NET Core Web APIs with a responsive Angular frontend, utilizing layered domain architecture and Entity Framework Core data access.",
+        role: "Software Engineer &bull; Technical Lead &amp; MVC Implementation",
+        gradient: "linear-gradient(135deg, #10b981, #059669)",
+        iconSvg: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>`,
+        summary: "Multi-role enterprise web application engineered with ASP.NET MVC, C# and SQL Server, featuring comprehensive operational dashboards, Highcharts analytics, dynamic reporting grids, and multi-format export pipelines.",
         bullets: [
-          "Developed RESTful APIs, robust CRUD operations and business logic handlers in ASP.NET Core.",
-          "Built reusable Angular components, services and reactive observables for API integration and data binding.",
-          "Implemented Entity Framework Core and LINQ data access patterns with clean separation of concerns.",
-          "Optimized SQL queries, stored procedures, triggers and performance indexes in SQL Server.",
-          "Tested, validated and documented all API endpoints with Postman and Swagger UI."
+          "Led development and technical implementation of a multi-role web application.",
+          "Coordinated team development activities, module integration, debugging, and technical delivery across application modules.",
+          "Developed interactive dashboard functionality for booking, revenue, subscription, and operational metrics.",
+          "Implemented interactive Highcharts dashboards supporting weekly, monthly, and yearly data filtering.",
+          "Developed data-driven reports using jQuery, AJAX, and DataTables with date-range filtering.",
+          "Designed and maintained flag-based stored procedure logic for optimized database operations.",
+          "Implemented SQL joins, aggregate functions, and date-based filtering with report export functionality for Excel, PDF, CSV, and Print."
         ],
         architecture: [
-          { layer: "Frontend", title: "Angular SPA", detail: "Components, Services, RxJS, HTTPClient" },
-          { layer: "API Layer", title: "ASP.NET Core Web API", detail: "REST Controllers, Dependency Injection" },
-          { layer: "ORM / Data", title: "EF Core & LINQ", detail: "DbSet, Migrations, Query Optimization" },
-          { layer: "Database", title: "SQL Server", detail: "Stored Procedures, Triggers, Indexes" }
+          { layer: "Presentation", title: "MVC Razor Views", detail: "Partial Views, jQuery, Highcharts, DataTables" },
+          { layer: "Controllers", title: "ASP.NET MVC", detail: "Action Filters, Model Binding, Security & RBAC" },
+          { layer: "Data Access", title: "ADO.NET Pipeline", detail: "Optimized SqlCommands & DataReaders" },
+          { layer: "Database", title: "SQL Server", detail: "Flag-based SPs, Multi-table Joins, Aggregations" }
         ],
-        stack: ["ASP.NET Core", "Web API", "Angular", "EF Core", "LINQ", "SQL Server", "TypeScript", "Swagger", "Postman"]
+        stack: ["ASP.NET MVC", "C#", "SQL Server", "ADO.NET", "jQuery", "AJAX", "Bootstrap", "Highcharts", "DataTables", "IIS"]
       },
       3: {
         id: 3,
         number: "03",
-        category: "03 / DESKTOP",
+        category: "03 / DESKTOP CRM &bull; WINFORMS",
         title: "SSBridge",
         company: "Sumeru Infotech Pvt. Ltd., Pune",
-        role: "Software Engineer · Desktop Architecture",
+        role: "Software Engineer &bull; Desktop Architecture &amp; OOP Design",
         gradient: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
         iconSvg: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>`,
-        summary: "Desktop CRM and operational application built using C# WinForms, ADO.NET and SQL Server, engineered for business client workflows, transactional stability and robust reliability.",
+        summary: "Desktop CRM application built with C# WinForms, ADO.NET and SQL Server, enforcing structured class-based layered architecture, DBNull safety, and stored procedure execution.",
         bullets: [
-          "Developed end-to-end CRUD operations and database access methods using OOP principles.",
-          "Implemented stored procedure execution across mission-critical application modules.",
-          "Built resilient client data loading and grid manipulation using ADO.NET DataSet and DataTable.",
-          "Designed class-based layered architecture enforcing clean separation of UI and database logic.",
-          "Implemented comprehensive DBNull validation, structured exception handling and error logging."
+          "Developed a desktop-based CRM application using C# WinForms, ADO.NET, and SQL Server.",
+          "Implemented CRUD operations, database access methods, and stored procedure execution for application modules.",
+          "Developed data-loading functionality using DataSet, DataTable, and stored procedures.",
+          "Applied Object-Oriented Programming (OOP) and class-based architecture to separate UI, business logic, and database operations.",
+          "Implemented exception handling, DBNull handling, and application-level error management."
         ],
         architecture: [
-          { layer: "UI / Desktop", title: "C# WinForms", detail: "Custom Forms, Controls, DataGridView" },
-          { layer: "Business Logic", title: "OOP Service Classes", detail: "Data Validation, Transaction Rules" },
-          { layer: "Data Layer", title: "ADO.NET", detail: "SqlCommand, DataSet, DataTable, SqlDataReader" },
-          { layer: "Database", title: "SQL Server", detail: "Stored Procedures, Transactions, Constraints" }
+          { layer: "UI / Client", title: "C# WinForms", detail: "Custom Controls, Forms, DataGridViews, Event Handlers" },
+          { layer: "Business Logic", title: "OOP Service Classes", detail: "Validation Rules, State Management, Business Logic" },
+          { layer: "Data Layer", title: "ADO.NET", detail: "DataSet, DataTable, SqlDataAdapter, Parameters" },
+          { layer: "Database", title: "SQL Server", detail: "Stored Procedures, Transactions, Constraints, Indexes" }
         ],
-        stack: ["C#", "WinForms", "SQL Server", "ADO.NET", "Stored Procedures", "OOP", "Exception Handling"]
+        stack: ["C#", "WinForms", "SQL Server", "ADO.NET", "Stored Procedures", "OOP", "DataSet / DataTable", "Exception Handling"]
       }
     };
 
@@ -2302,10 +3328,10 @@
       iconContainer.style.background = proj.gradient;
       iconContainer.innerHTML = proj.iconSvg;
 
-      document.getElementById('modalProjCategory').innerText = proj.category;
+      document.getElementById('modalProjCategory').innerHTML = proj.category;
       document.getElementById('modalProjectTitle').innerText = proj.title;
       document.getElementById('modalProjCompany').innerText = proj.company;
-      document.getElementById('modalProjTimeline').innerText = proj.role;
+      document.getElementById('modalProjTimeline').innerHTML = proj.role;
 
       // Update Tabs
       [1, 2, 3].forEach(num => {
@@ -2340,9 +3366,9 @@
           </div>
         </div>
 
-        <!-- Section 2: Key Technical Contributions (From Resume) -->
+        <!-- Section 2: Key Technical Contributions -->
         <div>
-          <div class="modal-section-title">Key Contributions & Technical Accomplishments</div>
+          <div class="modal-section-title">Key Contributions &amp; Technical Accomplishments</div>
           <ul class="modal-bullets-list">
             ${bulletsHtml}
           </ul>
@@ -2350,7 +3376,7 @@
 
         <!-- Section 3: Layered Architecture Pipeline -->
         <div>
-          <div class="modal-section-title">Layered Architecture & Data Flow</div>
+          <div class="modal-section-title">Layered Architecture &amp; Data Flow</div>
           <div class="modal-arch-pipeline">
             ${archHtml}
           </div>
@@ -2358,7 +3384,7 @@
 
         <!-- Section 4: Technology Stack -->
         <div>
-          <div class="modal-section-title">Technologies & Tools Used</div>
+          <div class="modal-section-title">Technologies &amp; Tools Used</div>
           <div class="modal-tech-chips-row">
             ${stackHtml}
           </div>
@@ -2402,15 +3428,30 @@
       renderProjectModalContent(prevId);
     }
 
-    // Keyboard navigation for modal
+    // ==========================================================================
+    // RESUME PREVIEW MODAL LOGIC
+    // ==========================================================================
+    const resumeModal = document.getElementById('resumeModal');
+
+    function openResumeModal() {
+      resumeModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeResumeModal() {
+      resumeModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Keyboard navigation
     window.addEventListener('keydown', (e) => {
-      if (!projectModal.classList.contains('open')) return;
-      if (e.key === 'Escape') {
-        closeProjectModal();
-      } else if (e.key === 'ArrowRight') {
-        nextProjectModal();
-      } else if (e.key === 'ArrowLeft') {
-        prevProjectModal();
+      if (projectModal.classList.contains('open')) {
+        if (e.key === 'Escape') closeProjectModal();
+        if (e.key === 'ArrowRight') nextProjectModal();
+        if (e.key === 'ArrowLeft') prevProjectModal();
+      }
+      if (resumeModal.classList.contains('open')) {
+        if (e.key === 'Escape') closeResumeModal();
       }
     });
   </script>
