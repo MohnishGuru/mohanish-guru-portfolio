@@ -1,0 +1,2418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mohanish Guru - Full Stack .NET Developer specializing in C#, ASP.NET Core, Web API, Angular, SQL Server and enterprise application development." />
+  <meta name="keywords" content="Mohanish Guru, .NET Developer, Full Stack Developer, ASP.NET Core, C#, Angular, SQL Server, Web API, Pune" />
+  <meta name="author" content="Mohanish Guru" />
+  <title>Mohanish Guru | Full Stack .NET Developer</title>
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-dark: #047857;
+      --primary-light: #ecfdf5;
+      --primary-border: #a7f3d0;
+      --accent-green: #10b981;
+      --accent-teal: #0d9488;
+      --accent-blue: #2563eb;
+      --accent-purple: #8b5cf6;
+      --accent-orange: #f97316;
+
+      --body-bg: #ffffff;
+      --section-alt: #f8fafc;
+      --card-bg: #ffffff;
+      --footer-bg: #091322;
+
+      --hero-bg: radial-gradient(circle at 85% 25%, #d1fae5 0%, #ecfdf5 40%, #f8fafc 85%);
+
+      --text-dark: #0f172a;
+      --text-body: #475569;
+      --text-muted: #64748b;
+      --text-light: #94a3b8;
+      --border-color: #e2e8f0;
+      --border-subtle: #f1f5f9;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 14px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 12px 28px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 12px 26px rgba(5, 150, 105, 0.12);
+
+      --container-max: 1180px;
+      --transition: all 0.25s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--body-bg);
+      color: var(--text-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .container {
+      width: min(var(--container-max), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* ==========================================================================
+       HEADER NAVIGATION
+       ========================================================================== */
+    .header-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 74px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .header-nav.scrolled {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+    }
+
+    .brand-icon-code {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -1px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-menu a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--primary);
+    }
+
+    .nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--primary);
+      border-radius: 2px;
+    }
+
+    .nav-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-resume {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #065f46;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-resume:hover {
+      background-color: #047857;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(6, 95, 70, 0.25);
+    }
+
+    .btn-resume svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      padding: 6px;
+      color: var(--text-dark);
+      cursor: pointer;
+    }
+
+    /* ==========================================================================
+       HERO SECTION (Light Fresh Theme with Mint Organic Backdrop)
+       ========================================================================== */
+    .hero-section {
+      background: var(--hero-bg);
+      padding-top: 135px;
+      padding-bottom: 75px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-greeting {
+      font-size: 0.88rem;
+      color: var(--primary);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .hero-name {
+      font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .hero-name .highlight {
+      color: var(--primary);
+    }
+
+    .hero-role {
+      font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 22px;
+    }
+
+    .hero-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 24px;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .hero-meta-item:hover {
+      color: var(--primary);
+    }
+
+    .hero-meta-item svg {
+      width: 17px;
+      height: 17px;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .hero-bio {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #475569;
+      max-width: 580px;
+    }
+
+    /* Hero Right - Organic Mint Shape with sparkles */
+    .hero-portrait-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .organic-shape-backdrop {
+      width: 360px;
+      height: 360px;
+      background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 60%, #34d399 100%);
+      border-radius: 65% 35% 55% 45% / 45% 55% 45% 55%;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      box-shadow: 0 20px 45px rgba(5, 150, 105, 0.18);
+      overflow: hidden;
+    }
+
+    .organic-shape-backdrop img {
+      width: 86%;
+      height: 94%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 0 0 140px 140px;
+      filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.15));
+    }
+
+    /* Floating Sparkles */
+    .sparkle-icon {
+      position: absolute;
+      color: #10b981;
+      opacity: 0.75;
+      animation: pulseSparkle 3s ease-in-out infinite alternate;
+    }
+
+    .sparkle-top-right {
+      top: -15px;
+      right: 15px;
+      font-size: 1.5rem;
+    }
+
+    .sparkle-bottom-left {
+      bottom: -15px;
+      left: 15px;
+      font-size: 1.4rem;
+    }
+
+    @keyframes pulseSparkle {
+      0% { transform: scale(0.85); opacity: 0.5; }
+      100% { transform: scale(1.15); opacity: 0.9; }
+    }
+
+    /* ==========================================================================
+       SECTION HEADINGS (Green Circle Icon + Title)
+       ========================================================================== */
+    .section-wrap {
+      padding: 72px 0;
+    }
+
+    .section-header-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .section-circle-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #065f46;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(6, 95, 70, 0.2);
+    }
+
+    .section-circle-badge.square-type {
+      border-radius: var(--radius-md);
+    }
+
+    .section-circle-badge svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .section-title-text {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+    }
+
+    /* ==========================================================================
+       ABOUT ME SECTION
+       ========================================================================== */
+    .about-split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .about-bio-text {
+      font-size: 0.98rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .about-highlights-2x2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .highlight-card-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: var(--transition);
+    }
+
+    .highlight-card-box:hover {
+      background: #ffffff;
+      border-color: var(--primary-border);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hl-circle-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #ecfdf5;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hl-circle-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .hl-info-text h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .hl-info-text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       TECHNICAL SKILLS SECTION
+       ========================================================================== */
+    .skills-grid-2col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .tech-skill-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .tech-skill-item:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tech-skill-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .tech-skill-badge svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .badge-code     { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+    .badge-monitor  { background: linear-gradient(135deg, #059669, #047857); }
+    .badge-database { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+    .badge-gear     { background: linear-gradient(135deg, #f97316, #ea580c); }
+    .badge-wrench   { background: linear-gradient(135deg, #ef4444, #dc2626); }
+    .badge-cloud    { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+
+    .tech-skill-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .tech-skill-content p {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       SIDE-BY-SIDE: EXPERIENCE (LEFT) & FEATURED PROJECTS (RIGHT)
+       ========================================================================== */
+    .exp-projects-split-layout {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 36px;
+      align-items: flex-start;
+    }
+
+    /* Left: Experience Timeline */
+    .timeline-track-wrap {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline-track-wrap::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: #a7f3d0;
+    }
+
+    .exp-entry-node {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .exp-bullet-dot {
+      position: absolute;
+      left: -32px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 4px solid var(--primary);
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2);
+    }
+
+    .exp-entry-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .exp-top-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+    }
+
+    .exp-top-heading h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .exp-date-pill {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #f1f5f9;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+    }
+
+    .exp-role-text {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .exp-location-row {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 16px;
+    }
+
+    .exp-bullets-list {
+      padding-left: 18px;
+      list-style-type: disc;
+      margin-bottom: 18px;
+    }
+
+    .exp-bullets-list li {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .exp-bullets-list li::marker {
+      color: var(--primary);
+    }
+
+    .exp-tech-stack-row {
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .exp-tech-stack-row strong {
+      color: var(--text-dark);
+    }
+
+    /* Right: Featured Projects List Stack */
+    .featured-projects-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .project-row-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .project-row-item:hover {
+      border-color: #34d399;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(5, 150, 105, 0.12);
+    }
+
+    .proj-row-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .proj-row-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .proj-row-info {
+      flex-grow: 1;
+      min-width: 0;
+    }
+
+    .proj-tag-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 3px;
+    }
+
+    .proj-row-info h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .proj-row-info p.proj-summary {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .proj-tags-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .proj-tag-chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .proj-card-footer-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding-top: 10px;
+      border-top: 1px dashed #e2e8f0;
+      width: 100%;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .project-row-item:hover .proj-card-footer-cta {
+      color: var(--primary-dark);
+    }
+
+    .project-row-item:hover .proj-card-footer-cta svg {
+      transform: translateX(4px);
+    }
+
+    .proj-card-footer-cta svg {
+      transition: transform 0.2s ease;
+    }
+
+    .proj-circle-arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: var(--transition);
+      margin-top: 2px;
+      background: #ffffff;
+      cursor: pointer;
+    }
+
+    .project-row-item:hover .proj-circle-arrow {
+      background: var(--primary-light);
+      border-color: var(--primary-border);
+      color: var(--primary);
+      transform: translateX(2px);
+    }
+
+    /* Bottom 'View All Projects' callout card */
+    .view-all-projects-card {
+      background: #ecfdf5;
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .view-all-projects-card:hover {
+      background: #d1fae5;
+      transform: translateX(4px);
+    }
+
+    .view-all-icon {
+      color: var(--primary);
+    }
+
+    .view-all-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #065f46;
+    }
+
+    .view-all-text p {
+      font-size: 0.78rem;
+      color: #047857;
+    }
+
+    /* ==========================================================================
+       INTERACTIVE PROJECT DETAILS MODAL
+       ========================================================================== */
+    .project-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 19, 34, 0.72);
+      backdrop-filter: blur(8px);
+      z-index: 2500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .project-modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .project-modal-container {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.35);
+      max-width: 840px;
+      width: 100%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      transform: scale(0.95) translateY(12px);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    .project-modal-backdrop.open .project-modal-container {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-header-bar {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      background: linear-gradient(to bottom, #f8fafc, #ffffff);
+    }
+
+    .modal-header-left {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .modal-proj-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .modal-proj-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .modal-title-wrap {
+      min-width: 0;
+    }
+
+    .modal-cat-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .modal-title-wrap h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .modal-company-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .modal-company-sub span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .modal-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .modal-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .modal-close-btn:hover {
+      background: #fee2e2;
+      color: #dc2626;
+      border-color: #fca5a5;
+    }
+
+    /* Modal Project Switcher Tab Strip */
+    .modal-switcher-strip {
+      padding: 10px 24px;
+      background: #f1f5f9;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+    }
+
+    .modal-switcher-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: #ffffff;
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .modal-switcher-tab:hover {
+      color: var(--primary);
+      border-color: var(--primary-border);
+    }
+
+    .modal-switcher-tab.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+    }
+
+    .modal-body-scroll {
+      padding: 24px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      max-height: calc(90vh - 210px);
+    }
+
+    .modal-section-title {
+      font-size: 0.84rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-section-title::after {
+      content: "";
+      flex-grow: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    .modal-overview-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+    }
+
+    .modal-overview-box p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    .modal-bullets-list {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    .modal-bullets-list li {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .modal-bullets-list li::marker {
+      color: var(--primary);
+    }
+
+    .modal-arch-pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .modal-arch-node {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .modal-arch-node .node-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+
+    .modal-arch-node strong {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .modal-arch-node span {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+      display: block;
+    }
+
+    .modal-tech-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .modal-tech-badge {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      background: #ecfdf5;
+      color: var(--primary-dark);
+      border: 1px solid var(--primary-border);
+    }
+
+    .modal-footer-bar {
+      padding: 16px 24px;
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .modal-nav-btns {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .modal-action-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .modal-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: var(--radius-md);
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .modal-cta-btn:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
+    }
+
+    @media (max-width: 640px) {
+      .project-modal-backdrop {
+        padding: 10px;
+      }
+
+      .project-modal-container {
+        max-height: 96vh;
+      }
+
+      .modal-header-bar, .modal-body-scroll, .modal-footer-bar {
+        padding: 16px;
+      }
+
+      .modal-arch-pipeline {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .modal-footer-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .modal-nav-btns {
+        justify-content: space-between;
+      }
+
+      .modal-cta-btn {
+        justify-content: center;
+      }
+    }
+
+    /* ==========================================================================
+       EDUCATION & CERTIFICATIONS
+       ========================================================================== */
+    .edu-cert-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .bottom-info-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      height: 100%;
+    }
+
+    .bottom-info-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .bottom-info-icon-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: #ecfdf5;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .bottom-info-icon-badge svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .bottom-info-details h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .bottom-info-details .sub {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .bottom-info-details .meta {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--footer-bg);
+      color: #94a3b8;
+      padding: 44px 0 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-content-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand-subtitle {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .footer-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav-links a {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      transition: var(--transition);
+    }
+
+    .footer-nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-social-tray {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-icon-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: var(--transition);
+    }
+
+    .footer-icon-circle:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .footer-icon-circle svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-copyright {
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (MOBILE & TABLET)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 36px;
+      }
+
+      .hero-bio {
+        margin-inline: auto;
+      }
+
+      .hero-meta-row {
+        justify-content: center;
+      }
+
+      .about-split-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-projects-split-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-nav {
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px 24px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+        gap: 16px;
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .btn-resume span {
+        display: none;
+      }
+
+      .skills-grid-2col {
+        grid-template-columns: 1fr;
+      }
+
+      .edu-cert-2col {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .hero-section {
+        padding-top: 105px;
+        padding-bottom: 45px;
+      }
+
+      .hero-name {
+        font-size: 2.3rem;
+      }
+
+      .organic-shape-backdrop {
+        width: min(280px, 76vw);
+        height: min(280px, 76vw);
+      }
+
+      .about-highlights-2x2 {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-track-wrap {
+        padding-left: 20px;
+      }
+
+      .exp-bullet-dot {
+        left: -20px;
+      }
+
+      .exp-entry-card {
+        padding: 20px 16px;
+      }
+
+      .exp-top-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .project-row-item {
+        padding: 16px 14px;
+        gap: 12px;
+      }
+
+      .proj-row-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .proj-circle-arrow {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       HEADER NAVIGATION
+       ========================================================================== -->
+  <header class="header-nav" id="mainHeader">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="Mohanish Guru Home">
+        <span class="brand-icon-code">&lt;/&gt;</span>
+        <span>Mohanish Guru</span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-right-actions">
+        <a href="mailto:mohanishguru111@gmail.com?subject=Resume%20Request%20-%20Mohanish%20Guru" class="btn-resume" id="downloadResumeBtn">
+          <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+          </svg>
+          <span>Download Resume</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <!-- Hero Content -->
+        <div>
+          <span class="hero-greeting">HELLO, I'M</span>
+          <h1 class="hero-name">Mohanish <span class="highlight">Guru</span></h1>
+          <div class="hero-role">Full Stack .NET Developer</div>
+
+          <div class="hero-meta-row">
+            <div class="hero-meta-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+              <span>Pune, Maharashtra, India</span>
+            </div>
+
+            <a href="mailto:mohanishguru111@gmail.com" class="hero-meta-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              <span>mohanishguru111@gmail.com</span>
+            </a>
+
+            <a href="tel:+919225314839" class="hero-meta-item">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <span>+91 9225314839</span>
+            </a>
+          </div>
+
+          <p class="hero-bio">
+            Passionate Full Stack .NET Developer with 1.5+ years of experience in building scalable enterprise web and desktop applications, modern web frameworks and database management. I love solving real-world problems through clean and efficient code.
+          </p>
+        </div>
+
+        <!-- Hero Right Organic Backdrop -->
+        <div class="hero-portrait-wrapper">
+          <span class="sparkle-icon sparkle-top-right">✦</span>
+          <span class="sparkle-icon sparkle-bottom-left">✦</span>
+
+          <div class="organic-shape-backdrop">
+            <img src="./profile.jpg" alt="Mohanish Guru - Full Stack .NET Developer" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=80';" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME SECTION
+         ========================================================================== -->
+    <section class="section-wrap" id="about">
+      <div class="container">
+        <div class="section-header-block">
+          <div class="section-circle-badge">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+            </svg>
+          </div>
+          <h2 class="section-title-text">About Me</h2>
+        </div>
+
+        <div class="about-split-grid">
+          <!-- Left Text -->
+          <div>
+            <p class="about-bio-text">
+              I am a Full Stack .NET Developer with experience in building web and desktop applications, working with modern technologies and delivering quality solutions. I enjoy working in collaborative teams, learning new technologies and continuously improving my skills to create better user experiences and business value.
+            </p>
+            <p class="about-bio-text" style="margin-bottom:0;">
+              Experienced in designing, developing and maintaining web and desktop applications, with hands-on exposure to RESTful APIs, layered architecture, OOP, SQL optimization, dynamic reporting automation and production deployment on IIS.
+            </p>
+          </div>
+
+          <!-- Right 2x2 Highlights Grid -->
+          <div class="about-highlights-2x2">
+            <!-- 1. Clean Code -->
+            <div class="highlight-card-box">
+              <div class="hl-circle-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                </svg>
+              </div>
+              <div class="hl-info-text">
+                <h3>Clean Code</h3>
+                <p>Write maintainable and scalable code</p>
+              </div>
+            </div>
+
+            <!-- 2. Problem Solver -->
+            <div class="highlight-card-box">
+              <div class="hl-circle-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                </svg>
+              </div>
+              <div class="hl-info-text">
+                <h3>Problem Solver</h3>
+                <p>Analyze, debug and find efficient solutions</p>
+              </div>
+            </div>
+
+            <!-- 3. Team Player -->
+            <div class="highlight-card-box">
+              <div class="hl-circle-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div class="hl-info-text">
+                <h3>Team Player</h3>
+                <p>Work well with teams and communicate clearly</p>
+              </div>
+            </div>
+
+            <!-- 4. Continuous Learner -->
+            <div class="highlight-card-box">
+              <div class="hl-circle-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                </svg>
+              </div>
+              <div class="hl-info-text">
+                <h3>Continuous Learner</h3>
+                <p>Always eager to learn new technologies</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TECHNICAL SKILLS SECTION
+         ========================================================================== -->
+    <section class="section-wrap" id="skills" style="background-color: var(--section-alt);">
+      <div class="container">
+        <div class="section-header-block">
+          <div class="section-circle-badge">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h2 class="section-title-text">Technical Skills</h2>
+        </div>
+
+        <div class="skills-grid-2col">
+          <!-- 1. Languages -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-badge badge-code">
+              <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+              </svg>
+            </div>
+            <div class="tech-skill-content">
+              <h3>Languages</h3>
+              <p>C#, SQL, JavaScript, TypeScript</p>
+            </div>
+          </div>
+
+          <!-- 2. Backend -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-badge badge-gear">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+              </svg>
+            </div>
+            <div class="tech-skill-content">
+              <h3>Backend</h3>
+              <p>ASP.NET Core, ASP.NET MVC, Web API, EF Core, LINQ, ADO.NET, RESTful APIs</p>
+            </div>
+          </div>
+
+          <!-- 3. Frontend -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-badge badge-monitor">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3" />
+              </svg>
+            </div>
+            <div class="tech-skill-content">
+              <h3>Frontend</h3>
+              <p>Angular, JavaScript, jQuery, AJAX, Bootstrap, HTML5, CSS3, Responsive UI</p>
+            </div>
+          </div>
+
+          <!-- 4. Database -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-badge badge-database">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+              </svg>
+            </div>
+            <div class="tech-skill-content">
+              <h3>Database</h3>
+              <p>SQL Server, Stored Procedures, Triggers, Indexes, Query Optimization</p>
+            </div>
+          </div>
+
+          <!-- 5. Architecture & Testing -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-badge badge-wrench">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5v1.409l4.242 4.243" />
+              </svg>
+            </div>
+            <div class="tech-skill-content">
+              <h3>Architecture &amp; Quality</h3>
+              <p>Layered Architecture, Design Patterns, OOP, CRUD, Exception Handling, Unit Testing</p>
+            </div>
+          </div>
+
+          <!-- 6. Tools & Practices -->
+          <div class="tech-skill-item">
+            <div class="tech-skill-badge badge-cloud">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+              </svg>
+            </div>
+            <div class="tech-skill-content">
+              <h3>Tools &amp; Development</h3>
+              <p>Visual Studio, VS Code, SSMS, Git, GitHub, IIS, Postman, Swagger, Agile/Scrum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SIDE-BY-SIDE: PROFESSIONAL EXPERIENCE (LEFT) & FEATURED PROJECTS (RIGHT)
+         ========================================================================== -->
+    <section class="section-wrap" id="experience">
+      <div class="container exp-projects-split-layout">
+        <!-- LEFT: Professional Experience -->
+        <div>
+          <div class="section-header-block">
+            <div class="section-circle-badge">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z" />
+              </svg>
+            </div>
+            <h2 class="section-title-text">Professional Experience</h2>
+          </div>
+
+          <div class="timeline-track-wrap">
+            <div class="exp-entry-node">
+              <div class="exp-bullet-dot"></div>
+
+              <div class="exp-entry-card">
+                <div class="exp-top-heading">
+                  <h3>Software Engineer</h3>
+                  <span class="exp-date-pill">Feb 2025 – Present</span>
+                </div>
+
+                <div class="exp-role-text" style="color:var(--text-dark); font-weight:800; margin-bottom:2px;">Sumeru Infotech Pvt. Ltd., Pune</div>
+
+                <div class="exp-location-row">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  <span>Pune, Maharashtra, India</span>
+                </div>
+
+                <ul class="exp-bullets-list">
+                  <li>Developed and maintained web and desktop applications using ASP.NET MVC, ASP.NET Core, WinForms, Web Forms, ADO.NET, C# and SQL Server.</li>
+                  <li>Architected and integrated RESTful APIs while contributing to database migrations, IIS hosting, production deployment, debugging and application maintenance.</li>
+                  <li>Implemented localization, dynamic report generation/export, role-based authorization, CRUD permissions, validation, global state and exception handling.</li>
+                  <li>Designed layered application architecture using OOP principles and reusable components.</li>
+                  <li>Built dynamic MVC interfaces with Views, Partial Views, Layouts, Sections and Areas.</li>
+                  <li>Optimized SQL queries, stored procedures, triggers and indexes to improve database performance.</li>
+                  <li>Implemented Entity Framework Core and LINQ for data access and query handling.</li>
+                  <li>Developed responsive frontend functionality using Angular, JavaScript, jQuery, AJAX and Bootstrap.</li>
+                  <li>Worked in Agile/Scrum processes including sprint planning, stand-ups, backlog grooming and code reviews.</li>
+                </ul>
+
+                <div class="exp-tech-stack-row">
+                  <strong>Technologies:</strong> C#, ASP.NET MVC, ASP.NET Core, Web API, ADO.NET, Entity Framework Core, LINQ, Angular, JavaScript, jQuery, SQL Server, IIS, WinForms.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Featured Projects (List Style with Arrow Buttons) -->
+        <div id="projects">
+          <div class="section-header-block">
+            <div class="section-circle-badge square-type">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+              </svg>
+            </div>
+            <h2 class="section-title-text">Featured Projects</h2>
+          </div>
+
+          <div class="featured-projects-column">
+            <!-- Project 1: SRuralRoots -->
+            <div class="project-row-item" onclick="openProjectModal(1)" role="button" tabindex="0" aria-label="View SRuralRoots architecture and project details">
+              <div class="proj-row-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                </svg>
+              </div>
+
+              <div class="proj-row-info">
+                <div class="proj-tag-eyebrow">01 / WEB APPLICATION</div>
+                <h3>SRuralRoots</h3>
+                <p class="proj-summary">Multi-role enterprise web application with dynamic dashboards, Highcharts analytics, reporting grids and multi-format data exports.</p>
+                <div class="proj-tags-line">
+                  <span class="proj-tag-chip">ASP.NET MVC</span>
+                  <span class="proj-tag-chip">C#</span>
+                  <span class="proj-tag-chip">SQL Server</span>
+                  <span class="proj-tag-chip">ADO.NET</span>
+                  <span class="proj-tag-chip">jQuery</span>
+                  <span class="proj-tag-chip">Highcharts</span>
+                </div>
+                <div class="proj-card-footer-cta">
+                  <span>Click to view full architecture &amp; module breakdown</span>
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </div>
+              </div>
+
+              <button class="proj-circle-arrow" aria-label="Open SRuralRoots details" onclick="event.stopPropagation(); openProjectModal(1)">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Project 2: SSProbe -->
+            <div class="project-row-item" onclick="openProjectModal(2)" role="button" tabindex="0" aria-label="View SSProbe architecture and project details">
+              <div class="proj-row-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+              </div>
+
+              <div class="proj-row-info">
+                <div class="proj-tag-eyebrow">02 / FULL STACK</div>
+                <h3>SSProbe</h3>
+                <p class="proj-summary">Full stack web application combining ASP.NET Core RESTful Web APIs with responsive Angular components and EF Core data access.</p>
+                <div class="proj-tags-line">
+                  <span class="proj-tag-chip">ASP.NET Core</span>
+                  <span class="proj-tag-chip">Web API</span>
+                  <span class="proj-tag-chip">Angular</span>
+                  <span class="proj-tag-chip">EF Core</span>
+                  <span class="proj-tag-chip">LINQ</span>
+                  <span class="proj-tag-chip">SQL Server</span>
+                </div>
+                <div class="proj-card-footer-cta">
+                  <span>Click to view full architecture &amp; module breakdown</span>
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </div>
+              </div>
+
+              <button class="proj-circle-arrow" aria-label="Open SSProbe details" onclick="event.stopPropagation(); openProjectModal(2)">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Project 3: SSBridge -->
+            <div class="project-row-item" onclick="openProjectModal(3)" role="button" tabindex="0" aria-label="View SSBridge architecture and project details">
+              <div class="proj-row-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                </svg>
+              </div>
+
+              <div class="proj-row-info">
+                <div class="proj-tag-eyebrow">03 / DESKTOP</div>
+                <h3>SSBridge</h3>
+                <p class="proj-summary">Desktop CRM application built with C# WinForms, ADO.NET and SQL Server, enforcing layered architecture and stored procedure execution.</p>
+                <div class="proj-tags-line">
+                  <span class="proj-tag-chip">C#</span>
+                  <span class="proj-tag-chip">WinForms</span>
+                  <span class="proj-tag-chip">SQL Server</span>
+                  <span class="proj-tag-chip">ADO.NET</span>
+                  <span class="proj-tag-chip">Stored Procedures</span>
+                  <span class="proj-tag-chip">OOP</span>
+                </div>
+                <div class="proj-card-footer-cta">
+                  <span>Click to view full architecture &amp; module breakdown</span>
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </div>
+              </div>
+
+              <button class="proj-circle-arrow" aria-label="Open SSBridge details" onclick="event.stopPropagation(); openProjectModal(3)">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Bottom Action Card -->
+            <div class="view-all-projects-card" onclick="openProjectModal(1)" role="button" tabindex="0" style="cursor: pointer;" aria-label="Explore interactive project deep dive">
+              <div class="view-all-icon">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                </svg>
+              </div>
+              <div class="view-all-text">
+                <h4>Explore Full Project Architecture &amp; Case Studies</h4>
+                <p>Click any project above or here to open the in-depth technical modal</p>
+              </div>
+              <div style="margin-left: auto; color: var(--primary);">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EDUCATION & CERTIFICATIONS / ACHIEVEMENTS
+         ========================================================================== -->
+    <section class="section-wrap" id="education" style="background-color: var(--section-alt);">
+      <div class="container edu-cert-2col">
+        <!-- Education -->
+        <div>
+          <div class="section-header-block">
+            <div class="section-circle-badge">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.75 8.35v1.312c0 .354.187.682.492.863A23.834 23.834 0 0012 21a23.834 23.834 0 007.258-1.032.999.999 0 00.492-.863v-1.312m-15.5 0a48.74 48.74 0 0015.5 0" />
+              </svg>
+            </div>
+            <h2 class="section-title-text">Education</h2>
+          </div>
+
+          <div class="bottom-info-card">
+            <div class="bottom-info-icon-badge">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+              </svg>
+            </div>
+            <div class="bottom-info-details">
+              <h3>B.Tech – Electronics &amp; Telecommunication</h3>
+              <div class="sub">Dr. Babasaheb Ambedkar Technological University, Lonere</div>
+              <div class="meta">2020 – 2024 · Grade A</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications / Achievements -->
+        <div>
+          <div class="section-header-block">
+            <div class="section-circle-badge">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.496m5.007 0a7.454 7.454 0 01-.982-3.172M9.496 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.77 1.35m8.25-6.842c.98.143 1.953.317 2.916.52a6.002 6.002 0 01-5.405 4.972m2.489-5.492V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.228h-.001m-2.48 5.228a6.726 6.726 0 01-2.77 1.35" />
+              </svg>
+            </div>
+            <h2 class="section-title-text">Achievement</h2>
+          </div>
+
+          <div class="bottom-info-card">
+            <div class="bottom-info-icon-badge" style="background: #ecfdf5; color: #059669;">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.496m5.007 0a7.454 7.454 0 01-.982-3.172M9.496 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.77 1.35m8.25-6.842c.98.143 1.953.317 2.916.52a6.002 6.002 0 01-5.405 4.972m2.489-5.492V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.228h-.001m-2.48 5.228a6.726 6.726 0 01-2.77 1.35" />
+              </svg>
+            </div>
+            <div class="bottom-info-details">
+              <h3>Runner-up – National Level Hackathon 2023</h3>
+              <div class="sub">Software Edition</div>
+              <div class="meta">Full-Stack Application &amp; Engineering Solution</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT / CONNECT SECTION
+         ========================================================================== -->
+    <section class="section-wrap" id="contact">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%); border-radius: var(--radius-xl); padding: 48px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; box-shadow: var(--shadow-lg);">
+          <div style="max-width: 560px;">
+            <div style="font-size: 0.85rem; font-weight: 800; color: #a7f3d0; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 8px;">Let's Connect</div>
+            <h2 style="color: #ffffff; font-size: 2.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 12px;">Have a role that matches my stack?</h2>
+            <p style="color: #d1fae5; font-size: 0.95rem; line-height: 1.65;">
+              I’m open to opportunities where I can contribute to backend engineering, full-stack application development, APIs, database-driven systems and scalable enterprise software.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; min-width: 280px;">
+            <a href="mailto:mohanishguru111@gmail.com" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 12px 18px; border-radius: var(--radius-md); color: #ffffff; font-size: 0.9rem; font-weight: 500; transition: var(--transition);">
+              <svg width="18" height="18" fill="none" stroke="#a7f3d0" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              <span>mohanishguru111@gmail.com</span>
+            </a>
+
+            <a href="tel:+919225314839" style="display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); padding: 12px 18px; border-radius: var(--radius-md); color: #ffffff; font-size: 0.9rem; font-weight: 500; transition: var(--transition);">
+              <svg width="18" height="18" fill="none" stroke="#a7f3d0" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <span>+91 9225314839</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE PROJECT DETAILS MODAL
+         ========================================================================== -->
+    <div class="project-modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle" onclick="closeProjectModal()">
+      <div class="project-modal-container" id="projectModalContainer" onclick="event.stopPropagation()">
+        <!-- Modal Top Header -->
+        <div class="modal-header-bar">
+          <div class="modal-header-left">
+            <div class="modal-proj-icon" id="modalProjIcon">
+              <!-- Dynamically populated icon -->
+            </div>
+            <div class="modal-title-wrap">
+              <span class="modal-cat-badge" id="modalProjCategory">01 / WEB APPLICATION</span>
+              <h2 id="modalProjectTitle">SRuralRoots</h2>
+              <div class="modal-company-sub">
+                <span id="modalProjCompany">Sumeru Infotech Pvt. Ltd., Pune</span>
+                <span>•</span>
+                <span id="modalProjTimeline">Full Stack Implementation</span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-header-actions">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close project modal" onclick="closeProjectModal()">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project Switcher Tab Strip -->
+        <div class="modal-switcher-strip">
+          <button class="modal-switcher-tab active" id="tabProj1" onclick="switchProjectModal(1)">01 · SRuralRoots</button>
+          <button class="modal-switcher-tab" id="tabProj2" onclick="switchProjectModal(2)">02 · SSProbe</button>
+          <button class="modal-switcher-tab" id="tabProj3" onclick="switchProjectModal(3)">03 · SSBridge</button>
+        </div>
+
+        <!-- Scrollable Project Details Body -->
+        <div class="modal-body-scroll" id="modalBodyContent">
+          <!-- Dynamically populated content -->
+        </div>
+
+        <!-- Modal Footer Navigation -->
+        <div class="modal-footer-bar">
+          <div class="modal-nav-btns">
+            <button class="modal-action-btn" id="modalPrevBtn" onclick="prevProjectModal()">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+              <span>Previous Project</span>
+            </button>
+            <button class="modal-action-btn" id="modalNextBtn" onclick="nextProjectModal()">
+              <span>Next Project</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+          <a href="mailto:mohanishguru111@gmail.com?subject=Inquiry%20Regarding%20Project" class="modal-cta-btn" id="modalContactBtn">
+            <span>Discuss This Project</span>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content-row">
+        <!-- Brand Info -->
+        <div>
+          <div class="footer-brand-title">Mohanish Guru</div>
+          <div class="footer-brand-subtitle">Full Stack .NET Developer</div>
+        </div>
+
+        <!-- Links -->
+        <ul class="footer-nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="footer-social-tray">
+          <a href="mailto:mohanishguru111@gmail.com" class="footer-icon-circle" aria-label="Email">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+          </a>
+
+          <a href="tel:+919225314839" class="footer-icon-circle" aria-label="Phone">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        &copy; 2026 Mohanish Guru. All rights reserved. Full Stack .NET Developer.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Header shadow on scroll
+    const mainHeader = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        mainHeader.classList.add('scrolled');
+      } else {
+        mainHeader.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle with icon swap
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    const hamburgerSvg = `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>`;
+    const closeSvg = `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>`;
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+      mobileMenuBtn.innerHTML = isOpen ? closeSvg : hamburgerSvg;
+    });
+
+    // Close menu when clicking nav links
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.innerHTML = hamburgerSvg;
+      });
+    });
+
+    // Active link highlighting on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 120;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          current = sectionId;
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // ==========================================================================
+    // INTERACTIVE PROJECT DETAILS MODAL LOGIC
+    // ==========================================================================
+    const projectsData = {
+      1: {
+        id: 1,
+        number: "01",
+        category: "01 / WEB APPLICATION",
+        title: "SRuralRoots",
+        company: "Sumeru Infotech Pvt. Ltd., Pune",
+        role: "Software Engineer · Technical Implementation",
+        gradient: "linear-gradient(135deg, #10b981, #059669)",
+        iconSvg: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" /></svg>`,
+        summary: "Multi-role enterprise web application engineered with ASP.NET MVC, C# and SQL Server, featuring comprehensive operational dashboards, high-volume reporting, interactive data filtering and multi-format export capabilities.",
+        bullets: [
+          "Led technical implementation and coordinated module integration across frontend views and backend controllers.",
+          "Built booking, revenue, subscription and operational dashboards tailored for distinct stakeholder roles.",
+          "Implemented Highcharts with weekly, monthly and yearly filtering for actionable business analytics.",
+          "Created AJAX and DataTables reporting grids with dynamic date-range filtering and pagination.",
+          "Implemented multi-format export pipelines supporting Excel, PDF, CSV and direct Print formats."
+        ],
+        architecture: [
+          { layer: "Presentation", title: "MVC Views", detail: "Razor, Partial Views, jQuery, Highcharts" },
+          { layer: "Controllers", title: "MVC Logic", detail: "Action Filters, Model Binding, Validation" },
+          { layer: "Data Access", title: "ADO.NET Layer", detail: "Optimized SQL Connection & DataReaders" },
+          { layer: "Database", title: "SQL Server", detail: "Stored Procedures, Indexes, Views" }
+        ],
+        stack: ["ASP.NET MVC", "C#", "SQL Server", "ADO.NET", "jQuery", "Highcharts", "Bootstrap", "AJAX", "IIS"]
+      },
+      2: {
+        id: 2,
+        number: "02",
+        category: "02 / FULL STACK",
+        title: "SSProbe",
+        company: "Sumeru Infotech Pvt. Ltd., Pune",
+        role: "Software Engineer · Full Stack Development",
+        gradient: "linear-gradient(135deg, #3b82f6, #2563eb)",
+        iconSvg: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>`,
+        summary: "Full stack enterprise application combining high-performance ASP.NET Core Web APIs with a responsive Angular frontend, utilizing layered domain architecture and Entity Framework Core data access.",
+        bullets: [
+          "Developed RESTful APIs, robust CRUD operations and business logic handlers in ASP.NET Core.",
+          "Built reusable Angular components, services and reactive observables for API integration and data binding.",
+          "Implemented Entity Framework Core and LINQ data access patterns with clean separation of concerns.",
+          "Optimized SQL queries, stored procedures, triggers and performance indexes in SQL Server.",
+          "Tested, validated and documented all API endpoints with Postman and Swagger UI."
+        ],
+        architecture: [
+          { layer: "Frontend", title: "Angular SPA", detail: "Components, Services, RxJS, HTTPClient" },
+          { layer: "API Layer", title: "ASP.NET Core Web API", detail: "REST Controllers, Dependency Injection" },
+          { layer: "ORM / Data", title: "EF Core & LINQ", detail: "DbSet, Migrations, Query Optimization" },
+          { layer: "Database", title: "SQL Server", detail: "Stored Procedures, Triggers, Indexes" }
+        ],
+        stack: ["ASP.NET Core", "Web API", "Angular", "EF Core", "LINQ", "SQL Server", "TypeScript", "Swagger", "Postman"]
+      },
+      3: {
+        id: 3,
+        number: "03",
+        category: "03 / DESKTOP",
+        title: "SSBridge",
+        company: "Sumeru Infotech Pvt. Ltd., Pune",
+        role: "Software Engineer · Desktop Architecture",
+        gradient: "linear-gradient(135deg, #8b5cf6, #7c3aed)",
+        iconSvg: `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>`,
+        summary: "Desktop CRM and operational application built using C# WinForms, ADO.NET and SQL Server, engineered for business client workflows, transactional stability and robust reliability.",
+        bullets: [
+          "Developed end-to-end CRUD operations and database access methods using OOP principles.",
+          "Implemented stored procedure execution across mission-critical application modules.",
+          "Built resilient client data loading and grid manipulation using ADO.NET DataSet and DataTable.",
+          "Designed class-based layered architecture enforcing clean separation of UI and database logic.",
+          "Implemented comprehensive DBNull validation, structured exception handling and error logging."
+        ],
+        architecture: [
+          { layer: "UI / Desktop", title: "C# WinForms", detail: "Custom Forms, Controls, DataGridView" },
+          { layer: "Business Logic", title: "OOP Service Classes", detail: "Data Validation, Transaction Rules" },
+          { layer: "Data Layer", title: "ADO.NET", detail: "SqlCommand, DataSet, DataTable, SqlDataReader" },
+          { layer: "Database", title: "SQL Server", detail: "Stored Procedures, Transactions, Constraints" }
+        ],
+        stack: ["C#", "WinForms", "SQL Server", "ADO.NET", "Stored Procedures", "OOP", "Exception Handling"]
+      }
+    };
+
+    let currentModalProjectId = 1;
+    const projectModal = document.getElementById('projectModal');
+
+    function renderProjectModalContent(id) {
+      const proj = projectsData[id];
+      if (!proj) return;
+
+      currentModalProjectId = id;
+
+      // Update Icon and Header
+      const iconContainer = document.getElementById('modalProjIcon');
+      iconContainer.style.background = proj.gradient;
+      iconContainer.innerHTML = proj.iconSvg;
+
+      document.getElementById('modalProjCategory').innerText = proj.category;
+      document.getElementById('modalProjectTitle').innerText = proj.title;
+      document.getElementById('modalProjCompany').innerText = proj.company;
+      document.getElementById('modalProjTimeline').innerText = proj.role;
+
+      // Update Tabs
+      [1, 2, 3].forEach(num => {
+        const tab = document.getElementById(`tabProj${num}`);
+        if (tab) {
+          if (num === id) {
+            tab.classList.add('active');
+          } else {
+            tab.classList.remove('active');
+          }
+        }
+      });
+
+      // Build Body HTML
+      const bulletsHtml = proj.bullets.map(b => `<li>${b}</li>`).join('');
+      const archHtml = proj.architecture.map(a => `
+        <div class="modal-arch-node">
+          <div class="node-label">${a.layer}</div>
+          <strong>${a.title}</strong>
+          <span>${a.detail}</span>
+        </div>
+      `).join('');
+      const stackHtml = proj.stack.map(s => `<span class="modal-tech-badge">${s}</span>`).join('');
+
+      const bodyContainer = document.getElementById('modalBodyContent');
+      bodyContainer.innerHTML = `
+        <!-- Section 1: Overview -->
+        <div>
+          <div class="modal-section-title">Project Overview</div>
+          <div class="modal-overview-box">
+            <p>${proj.summary}</p>
+          </div>
+        </div>
+
+        <!-- Section 2: Key Technical Contributions (From Resume) -->
+        <div>
+          <div class="modal-section-title">Key Contributions & Technical Accomplishments</div>
+          <ul class="modal-bullets-list">
+            ${bulletsHtml}
+          </ul>
+        </div>
+
+        <!-- Section 3: Layered Architecture Pipeline -->
+        <div>
+          <div class="modal-section-title">Layered Architecture & Data Flow</div>
+          <div class="modal-arch-pipeline">
+            ${archHtml}
+          </div>
+        </div>
+
+        <!-- Section 4: Technology Stack -->
+        <div>
+          <div class="modal-section-title">Technologies & Tools Used</div>
+          <div class="modal-tech-chips-row">
+            ${stackHtml}
+          </div>
+        </div>
+      `;
+
+      // Scroll modal body to top
+      bodyContainer.scrollTop = 0;
+
+      // Update Contact CTA subject
+      const contactBtn = document.getElementById('modalContactBtn');
+      if (contactBtn) {
+        contactBtn.href = `mailto:mohanishguru111@gmail.com?subject=Regarding%20${encodeURIComponent(proj.title)}%20Project%20-%20Mohanish%20Guru`;
+      }
+    }
+
+    function openProjectModal(id) {
+      renderProjectModalContent(id);
+      projectModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+      projectModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function switchProjectModal(id) {
+      renderProjectModalContent(id);
+    }
+
+    function nextProjectModal() {
+      let nextId = currentModalProjectId + 1;
+      if (nextId > 3) nextId = 1;
+      renderProjectModalContent(nextId);
+    }
+
+    function prevProjectModal() {
+      let prevId = currentModalProjectId - 1;
+      if (prevId < 1) prevId = 3;
+      renderProjectModalContent(prevId);
+    }
+
+    // Keyboard navigation for modal
+    window.addEventListener('keydown', (e) => {
+      if (!projectModal.classList.contains('open')) return;
+      if (e.key === 'Escape') {
+        closeProjectModal();
+      } else if (e.key === 'ArrowRight') {
+        nextProjectModal();
+      } else if (e.key === 'ArrowLeft') {
+        prevProjectModal();
+      }
+    });
+  </script>
+</body>
+</html>
