@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Mohanish Guru - Software Engineer & .NET Full Stack Developer specializing in C#, ASP.NET Core, ASP.NET MVC, Web API, Angular, SQL Server and enterprise application development in Pune, Maharashtra." />
-  <meta name="keywords" content="Mohanish Guru, Software Engineer, .NET Full Stack Developer, ASP.NET Core, C#, Angular, SQL Server, Web API, Pune, Entity Framework Core, ADO.NET, Resume, Portfolio" />
+  <meta name="keywords" content="Mohanish Guru, Software Engineer, .NET Full Stack Developer, ASP.NET Core, C#, Angular, SQL Server, Web API, Pune, Certifications, Gallery, Smart India Hackathon" />
   <meta name="author" content="Mohanish Guru" />
   <title>Mohanish Guru | Software Engineer &amp; .NET Full Stack Developer</title>
 
@@ -108,13 +108,14 @@
       left: 0;
       right: 0;
       height: 76px;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-color);
-      z-index: 1000;
+      z-index: 1100;
       display: flex;
       align-items: center;
-      transition: box-shadow 0.3s ease;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
     }
 
     .header-nav.scrolled {
@@ -125,21 +126,27 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
+      width: min(var(--container-max), calc(100% - 48px));
+      margin-inline: auto;
     }
 
     .brand-logo {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       font-weight: 800;
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       color: var(--text-dark);
+      flex-shrink: 0;
+      white-space: nowrap;
+      text-decoration: none;
     }
 
     .brand-icon-code {
       color: var(--primary);
       font-weight: 800;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       letter-spacing: -1px;
     }
 
@@ -147,15 +154,23 @@
       display: flex;
       align-items: center;
       list-style: none;
-      gap: 26px;
+      gap: clamp(10px, 1.3vw, 20px);
+      margin: 0;
+      padding: 0;
     }
 
     .nav-menu a {
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--text-muted);
       position: relative;
-      padding: 6px 0;
+      padding: 8px 3px;
+      white-space: nowrap;
+      transition: color 0.18s ease;
+    }
+
+    .nav-menu a svg {
+      display: none;
     }
 
     .nav-menu a:hover,
@@ -166,7 +181,7 @@
     .nav-menu a.active::after {
       content: '';
       position: absolute;
-      bottom: -2px;
+      bottom: 0px;
       left: 0;
       right: 0;
       height: 2.5px;
@@ -175,24 +190,26 @@
     }
 
     .nav-right-actions {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-shrink: 0;
     }
 
     .btn-view-cv {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       background-color: var(--primary-light);
       color: var(--primary-dark);
       border: 1px solid var(--primary-border);
-      padding: 9px 16px;
+      padding: 8px 14px;
       border-radius: var(--radius-sm);
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       font-weight: 700;
       transition: var(--transition);
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .btn-view-cv:hover {
@@ -204,14 +221,16 @@
     .btn-resume {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       background-color: #065f46;
       color: #ffffff;
-      padding: 9px 18px;
+      padding: 8px 16px;
       border-radius: var(--radius-sm);
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       font-weight: 600;
       transition: var(--transition);
+      white-space: nowrap;
+      text-decoration: none;
     }
 
     .btn-resume:hover {
@@ -221,17 +240,102 @@
     }
 
     .btn-resume svg, .btn-view-cv svg {
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
     }
 
     .mobile-toggle {
       display: none;
-      background: none;
-      border: none;
-      padding: 6px;
+      align-items: center;
+      justify-content: center;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      width: 40px;
+      height: 40px;
+      padding: 0;
       color: var(--text-dark);
       cursor: pointer;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .mobile-toggle:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .mobile-nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 19, 34, 0.45);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 1050;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .mobile-nav-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu-actions-wrap {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      margin-top: 8px;
+    }
+
+    .drawer-action-btn-cv,
+    .drawer-action-btn-resume {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+      text-decoration: none;
+    }
+
+    .drawer-action-btn-cv {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border: 1px solid var(--primary-border);
+    }
+
+    .drawer-action-btn-cv:hover {
+      background: #d1fae5;
+    }
+
+    .drawer-action-btn-resume {
+      background: #065f46;
+      color: #ffffff;
+      border: none;
+    }
+
+    .drawer-action-btn-resume:hover {
+      background: #047857;
+    }
+
+    .drawer-contact-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding: 4px 2px 0;
     }
 
     /* ==========================================================================
@@ -317,7 +421,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* Recruiter Quick Info Bar */
     .hero-meta-row {
       display: flex;
       flex-wrap: wrap;
@@ -381,7 +484,6 @@
       font-weight: 700;
     }
 
-    /* Recruiter Metric Snapshot Bar */
     .hero-metrics-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -471,7 +573,6 @@
       transform: translateY(-1px);
     }
 
-    /* Hero Right - Organic Mint Shape & Image */
     .hero-portrait-wrapper {
       display: flex;
       align-items: center;
@@ -501,7 +602,6 @@
       filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.15));
     }
 
-    /* Floating Badges on Portrait */
     .hero-floating-badge {
       position: absolute;
       background: rgba(255, 255, 255, 0.95);
@@ -559,7 +659,6 @@
       font-weight: 600;
     }
 
-    /* Floating Sparkles */
     .sparkle-icon {
       position: absolute;
       color: #10b981;
@@ -1159,7 +1258,162 @@
     }
 
     /* ==========================================================================
-       EDUCATION & ACHIEVEMENTS SECTION (Perfect 2-Column Balance)
+       CERTIFICATIONS SECTION (3-Column Clean Aligned Cards)
+       ========================================================================== */
+    .cert-grid-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .cert-card-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cert-card-item:hover {
+      border-color: var(--primary-border);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(5, 150, 105, 0.12);
+    }
+
+    .cert-thumb-wrap {
+      width: 100%;
+      height: 200px;
+      background: #f1f5f9;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .cert-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.35s ease;
+    }
+
+    .cert-card-item:hover .cert-thumb-wrap img {
+      transform: scale(1.05);
+    }
+
+    .cert-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 78, 59, 0.6);
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      gap: 8px;
+    }
+
+    .cert-card-item:hover .cert-thumb-overlay {
+      opacity: 1;
+    }
+
+    .cert-body-content {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .cert-meta-tagline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .cert-org-badge {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border: 1px solid var(--primary-border);
+    }
+
+    .cert-date-text {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .cert-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .cert-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .cert-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .cert-pill {
+      font-size: 0.74rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--section-alt);
+      color: var(--text-body);
+      border: 1px solid var(--border-color);
+    }
+
+    .cert-card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      padding: 10px;
+      background: var(--section-alt);
+      color: var(--text-dark);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .cert-card-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* ==========================================================================
+       EDUCATION & ACHIEVEMENTS SECTION (Balanced 2-Column Recruiter Alignment)
        ========================================================================== */
     .edu-cert-2col {
       display: grid;
@@ -1225,6 +1479,118 @@
       display: inline-block;
       padding: 3px 10px;
       border-radius: var(--radius-full);
+    }
+
+    /* ==========================================================================
+       GALLERY SECTION (Hackathons, Bootcamps & Engineering Highlights)
+       ========================================================================== */
+    .gallery-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-card-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-card-item:hover {
+      border-color: var(--primary-border);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(5, 150, 105, 0.12);
+    }
+
+    .gallery-card-item.featured-wide {
+      grid-column: span 2;
+    }
+
+    .gallery-img-container {
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+      position: relative;
+      background: #0f172a;
+    }
+
+    .gallery-card-item.featured-wide .gallery-img-container {
+      height: 290px;
+    }
+
+    .gallery-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-card-item:hover .gallery-img-container img {
+      transform: scale(1.05);
+    }
+
+    .gallery-hover-glass {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(9, 19, 34, 0.8) 0%, rgba(9, 19, 34, 0.2) 60%, transparent 100%);
+      opacity: 0;
+      transition: var(--transition);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: #ffffff;
+    }
+
+    .gallery-card-item:hover .gallery-hover-glass {
+      opacity: 1;
+    }
+
+    .gallery-view-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .gallery-caption-box {
+      padding: 18px 20px;
+      background: #ffffff;
+    }
+
+    .gallery-category-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .gallery-caption-box h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .gallery-caption-box p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.45;
     }
 
     /* ==========================================================================
@@ -1303,7 +1669,6 @@
       gap: 12px;
     }
 
-    /* Toast Notification */
     .toast-msg {
       position: fixed;
       bottom: 24px;
@@ -1671,7 +2036,99 @@
     }
 
     /* ==========================================================================
-       RECRUITER RESUME MODAL (ATS Printable Format)
+       IMAGE LIGHTBOX MODAL (Certifications & Gallery Viewer)
+       ========================================================================== */
+    .lightbox-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 19, 34, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 2700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .lightbox-modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-container {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      max-width: 950px;
+      width: 100%;
+      max-height: 92vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
+      transform: scale(0.95);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lightbox-modal-backdrop.open .lightbox-container {
+      transform: scale(1);
+    }
+
+    .lightbox-header {
+      padding: 16px 22px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lightbox-header-text h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-dark);
+    }
+
+    .lightbox-header-text span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+
+    .lightbox-img-frame {
+      padding: 20px;
+      background: #091322;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: calc(92vh - 140px);
+      overflow: auto;
+    }
+
+    .lightbox-img-frame img {
+      max-width: 100%;
+      max-height: calc(92vh - 180px);
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .lightbox-caption-bar {
+      padding: 14px 22px;
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ==========================================================================
+       RECRUITER RESUME MODAL (ATS Standard Format)
        ========================================================================== */
     .resume-modal-backdrop {
       position: fixed;
@@ -1809,7 +2266,7 @@
     .footer-nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
       list-style: none;
       flex-wrap: wrap;
     }
@@ -1909,49 +2366,128 @@
         grid-template-columns: 1fr;
       }
 
+      .cert-grid-3col {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-card-item.featured-wide {
+        grid-column: span 2;
+      }
+
       .exp-bullets-container {
         grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 768px) {
-      .header-nav {
-        background: rgba(255, 255, 255, 0.96);
+    /* ==========================================================================
+       RESPONSIVE HEADER & NAVIGATION DRAWER (Breakpoints: 1140px, 820px, 520px)
+       ========================================================================== */
+    @media (max-width: 1140px) {
+      .mobile-toggle {
+        display: inline-flex;
       }
 
       .nav-menu {
-        display: none;
-        position: absolute;
+        position: fixed;
         top: 76px;
         left: 0;
         right: 0;
+        max-height: calc(100vh - 76px);
         background: #ffffff;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 22px 24px;
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
-        gap: 16px;
+        align-items: stretch;
+        padding: 16px 20px 24px;
+        border-bottom: 2px solid var(--primary-border);
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+        gap: 4px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        z-index: 1060;
+        transform: translateY(-8px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, visibility 0.2s ease;
       }
 
       .nav-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .nav-menu li {
+        width: 100%;
+        list-style: none;
+      }
+
+      .nav-menu a {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.96rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        padding: 10px 14px;
+        border-radius: var(--radius-sm);
+        transition: background 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
       }
 
-      .mobile-toggle {
-        display: block;
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        padding-left: 18px;
       }
 
-      .btn-resume span {
+      .nav-menu a.active::after {
         display: none;
       }
 
+      .nav-menu a svg {
+        display: block;
+        color: var(--text-light);
+        flex-shrink: 0;
+        transition: transform 0.15s ease, color 0.15s ease;
+      }
+
+      .nav-menu a:hover svg,
+      .nav-menu a.active svg {
+        color: var(--primary);
+        transform: translateX(3px);
+      }
+
+      .mobile-menu-actions-wrap {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .header-nav .btn-resume {
+        display: none; /* Safely tucked inside drawer to keep top bar clean and spacious */
+      }
+    }
+
+    @media (max-width: 768px) {
       .hero-metrics-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .edu-cert-2col {
         grid-template-columns: 1fr;
+      }
+
+      .gallery-grid-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card-item.featured-wide {
+        grid-column: span 1;
       }
 
       .footer-content-row {
@@ -1966,6 +2502,30 @@
 
       .contact-action-tray {
         width: 100%;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-container {
+        width: calc(100% - 24px);
+        gap: 8px;
+      }
+
+      .brand-logo {
+        font-size: 1.05rem;
+        gap: 6px;
+      }
+
+      .btn-view-cv span {
+        display: none; /* Shows clean icon on very compact screens */
+      }
+
+      .btn-view-cv {
+        padding: 8px 10px;
+      }
+
+      .nav-right-actions {
+        gap: 6px;
       }
     }
 
@@ -2038,13 +2598,37 @@
       </a>
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">Summary</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" class="active"><span>Home</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></a></li>
+        <li><a href="#about"><span>Summary</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></a></li>
+        <li><a href="#skills"><span>Skills</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></a></li>
+        <li><a href="#experience"><span>Experience</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></a></li>
+        <li><a href="#projects"><span>Projects</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></a></li>
+        <li><a href="#certifications"><span>Certifications</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></a></li>
+        <li><a href="#gallery"><span>Gallery</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></a></li>
+        <li><a href="#education"><span>Education</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></a></li>
+        <li><a href="#contact"><span>Contact</span><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg></a></li>
+        
+        <li class="mobile-menu-actions-wrap">
+          <button class="drawer-action-btn-cv" onclick="openResumeModal(); closeMobileMenu();" aria-label="Preview full resume">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>Preview ATS Resume</span>
+          </button>
+          
+          <a href="mailto:mohanishguru111@gmail.com?subject=Job%20Opportunity%20-%20Mohanish%20Guru%20(.NET%20Developer)" class="drawer-action-btn-resume" onclick="closeMobileMenu();">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            <span>Download Resume</span>
+          </a>
+
+          <div class="drawer-contact-strip">
+            <span>mohanishguru111@gmail.com</span>
+            <span>+91 9225314839</span>
+          </div>
+        </li>
       </ul>
 
       <div class="nav-right-actions">
@@ -2063,14 +2647,17 @@
           <span>Download Resume</span>
         </a>
 
-        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle mobile menu">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileMenu()">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Backdrop Overlay -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" onclick="closeMobileMenu()" aria-hidden="true"></div>
 
   <main>
     <!-- ==========================================================================
@@ -2163,6 +2750,13 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
               </svg>
               <span>Explore Key Projects</span>
+            </a>
+
+            <a href="#certifications" class="btn-hero-secondary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Certificates</span>
             </a>
 
             <a href="#contact" class="btn-hero-secondary">
@@ -2452,7 +3046,7 @@
           <div class="tech-skill-card">
             <div class="tech-card-header">
               <div class="tech-skill-badge badge-red">
-                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 0121 12z" /></svg>
               </div>
               <div>
                 <h3>Testing &amp; API</h3>
@@ -2783,6 +3377,235 @@
     </section>
 
     <!-- ==========================================================================
+         CERTIFICATIONS SECTION (3-Column Recruiter Friendly Cards)
+         ========================================================================== -->
+    <section class="section-wrap" id="certifications">
+      <div class="container">
+        <div class="section-header-block">
+          <div class="section-title-wrap">
+            <div class="section-circle-badge">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+            </div>
+            <div>
+              <span class="section-subtitle-tag">CREDENTIALS &amp; CERTIFICATIONS</span>
+              <h2 class="section-title-text">Verified Certifications</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-grid-3col">
+          <!-- Cert 1: VISA & Forage -->
+          <div class="cert-card-item">
+            <div class="cert-thumb-wrap" onclick="openLightbox('./Certifications/Token_Service_Technology_Virtual_Experience.png', 'Token Service Technology Virtual Experience Program &bull; VISA &amp; Forage', 'Issued January 2023 &bull; Card Authentication &amp; API Integration')">
+              <img src="./Certifications/Token_Service_Technology_Virtual_Experience.png" alt="VISA Token Service Technology Certificate" />
+              <div class="cert-thumb-overlay">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+                <span>Click to Preview</span>
+              </div>
+            </div>
+
+            <div class="cert-body-content">
+              <div class="cert-meta-tagline">
+                <span class="cert-org-badge">VISA &bull; Forage</span>
+                <span class="cert-date-text">Jan 2023</span>
+              </div>
+              <h3 class="cert-title">Token Service Technology Virtual Experience</h3>
+              <p class="cert-desc">
+                Completed hands-on practical engineering tasks covering payment card authentication mechanisms and selecting Visa APIs for complex enterprise use cases.
+              </p>
+              <div class="cert-tags-row">
+                <span class="cert-pill">Payment Architecture</span>
+                <span class="cert-pill">Card Authentication</span>
+                <span class="cert-pill">API Integration</span>
+              </div>
+              <button class="cert-card-btn" onclick="openLightbox('./Certifications/Token_Service_Technology_Virtual_Experience.png', 'Token Service Technology Virtual Experience Program &bull; VISA &amp; Forage', 'Issued January 2023 &bull; Card Authentication &amp; API Integration')">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <span>View Full Certificate</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 2: TechEdu -->
+          <div class="cert-card-item">
+            <div class="cert-thumb-wrap" onclick="openLightbox('./Certifications/techedu_c.png', 'Training Cum Internship Program (TETCIP) &bull; TechEdu', 'Issued September 2021 &bull; 1 Month Practical Program')">
+              <img src="./Certifications/techedu_c.png" alt="TechEdu Internship Certificate" />
+              <div class="cert-thumb-overlay">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+                <span>Click to Preview</span>
+              </div>
+            </div>
+
+            <div class="cert-body-content">
+              <div class="cert-meta-tagline">
+                <span class="cert-org-badge" style="background:#eff6ff; color:#2563eb; border-color:#bfdbfe;">TechEdu</span>
+                <span class="cert-date-text">Sep 2021</span>
+              </div>
+              <h3 class="cert-title">Training Cum Internship Program (TETCIP)</h3>
+              <p class="cert-desc">
+                Successfully completed 1 month intensive training and practical development program covering software engineering fundamentals, coding standards, and algorithmic logic.
+              </p>
+              <div class="cert-tags-row">
+                <span class="cert-pill">Core Programming</span>
+                <span class="cert-pill">Algorithms</span>
+                <span class="cert-pill">Software Internship</span>
+              </div>
+              <button class="cert-card-btn" onclick="openLightbox('./Certifications/techedu_c.png', 'Training Cum Internship Program (TETCIP) &bull; TechEdu', 'Issued September 2021 &bull; 1 Month Practical Program')">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <span>View Full Certificate</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 3: Udemy Python -->
+          <div class="cert-card-item">
+            <div class="cert-thumb-wrap" onclick="openLightbox('./Certifications/udemy_Learn_Python.png', 'Complete Python Programming &bull; Udemy', 'Issued January 2023 &bull; 114 Total Hours Comprehensive Curriculum')">
+              <img src="./Certifications/udemy_Learn_Python.png" alt="Udemy Complete Python Programming Certificate" />
+              <div class="cert-thumb-overlay">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+                <span>Click to Preview</span>
+              </div>
+            </div>
+
+            <div class="cert-body-content">
+              <div class="cert-meta-tagline">
+                <span class="cert-org-badge" style="background:#f5f3ff; color:#7c3aed; border-color:#ddd6fe;">Udemy</span>
+                <span class="cert-date-text">Jan 2023</span>
+              </div>
+              <h3 class="cert-title">Complete Python Programming Mastery</h3>
+              <p class="cert-desc">
+                114 total hours of rigorous hands-on coursework by DURGASOFT, mastering object-oriented programming (OOP), file manipulation, data structures, and script automation.
+              </p>
+              <div class="cert-tags-row">
+                <span class="cert-pill">OOP Architecture</span>
+                <span class="cert-pill">114 Hours Course</span>
+                <span class="cert-pill">Data Structures</span>
+              </div>
+              <button class="cert-card-btn" onclick="openLightbox('./Certifications/udemy_Learn_Python.png', 'Complete Python Programming &bull; Udemy', 'Issued January 2023 &bull; 114 Total Hours Comprehensive Curriculum')">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <span>View Full Certificate</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         GALLERY SECTION (Hackathons, Bootcamps & Engineering Highlights)
+         ========================================================================== -->
+    <section class="section-wrap" id="gallery" style="background-color: var(--section-alt);">
+      <div class="container">
+        <div class="section-header-block">
+          <div class="section-title-wrap">
+            <div class="section-circle-badge">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+              </svg>
+            </div>
+            <div>
+              <span class="section-subtitle-tag">HIGHLIGHTS &amp; MILESTONES</span>
+              <h2 class="section-title-text">Event Gallery &amp; Competitions</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-grid-layout">
+          <!-- Gallery Item 1: SIH Grand Finale Group Photo (Wide) -->
+          <div class="gallery-card-item featured-wide" onclick="openLightbox('./Gallary/gallary_1.jpeg', 'Smart India Hackathon 2023 &bull; Grand Finale Finalists', 'Group picture of national finalists at Vignana Bharathi Institute of Technology &bull; Ministry of Education &amp; AICTE')">
+            <div class="gallery-img-container">
+              <img src="./Gallary/gallary_1.jpeg" alt="Smart India Hackathon 2023 Grand Finale Finalists Group" />
+              <div class="gallery-hover-glass">
+                <span class="gallery-view-pill">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+                  <span>Expand Image</span>
+                </span>
+              </div>
+            </div>
+            <div class="gallery-caption-box">
+              <span class="gallery-category-badge">NATIONAL LEVEL HACKATHON</span>
+              <h4>Smart India Hackathon 2023 &bull; Software Edition Grand Finale</h4>
+              <p>National grand finale gathering at Vignana Bharathi Institute of Technology organized by MoE's Innovation Cell, AICTE, AWS, and Hero.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 2: Team Lead SIH Runner Up Standee -->
+          <div class="gallery-card-item" onclick="openLightbox('./Gallary/gallary_3.jpeg', 'SIH 2023 National Runner-Up &bull; Team Lead Mohanish Guru', 'Team DTechMaster from Dr. Babasaheb Ambedkar Technological University, Lonere &bull; Text-to-Video AI Solution')">
+            <div class="gallery-img-container">
+              <img src="./Gallary/gallary_3.jpeg" alt="Mohanish Guru Team Lead SIH 2023 Runner-Up" />
+              <div class="gallery-hover-glass">
+                <span class="gallery-view-pill">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+                  <span>Expand Image</span>
+                </span>
+              </div>
+            </div>
+            <div class="gallery-caption-box">
+              <span class="gallery-category-badge">RUNNER-UP &bull; TEAM LEAD</span>
+              <h4>SIH 2023 &bull; Team DTechMaster</h4>
+              <p>Mohanish Guru presenting certificate as Team Lead for the Text-to-Video PIB Press Release AI/ML Solution.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 3: IDE Bootcamp BHU -->
+          <div class="gallery-card-item" onclick="openLightbox('./Gallary/gallary_2.jpeg', 'Innovation, Design & Entrepreneurship (IDE) Bootcamp &bull; BHU', 'Phase-III at Banaras Hindu University &bull; Ministry of Education, AICTE &amp; Wadhwani Foundation')">
+            <div class="gallery-img-container">
+              <img src="./Gallary/gallary_2.jpeg" alt="Mohanish Guru at IDE Bootcamp Banaras Hindu University" />
+              <div class="gallery-hover-glass">
+                <span class="gallery-view-pill">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+                  <span>Expand Image</span>
+                </span>
+              </div>
+            </div>
+            <div class="gallery-caption-box">
+              <span class="gallery-category-badge">INNOVATION BOOTCAMP</span>
+              <h4>IDE Bootcamp Phase-III &bull; Banaras Hindu University</h4>
+              <p>5-day intensive innovation and product strategy workshop organized by the Ministry of Education &amp; Wadhwani Foundation.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 4: IDE Certificate Participation -->
+          <div class="gallery-card-item" onclick="openLightbox('./Gallary/gallary_4.jpeg', 'IDE Bootcamp Certification &bull; Banaras Hindu University', 'Certificate of Completion for Design Thinking, Startups &amp; Opportunity Discovery Modules')">
+            <div class="gallery-img-container">
+              <img src="./Gallary/gallary_4.jpeg" alt="Mohanish Guru with IDE Bootcamp Certificate" />
+              <div class="gallery-hover-glass">
+                <span class="gallery-view-pill">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+                  <span>Expand Image</span>
+                </span>
+              </div>
+            </div>
+            <div class="gallery-caption-box">
+              <span class="gallery-category-badge">CREDENTIALS</span>
+              <h4>Design Thinking &amp; Entrepreneurship</h4>
+              <p>Awarded certificate for startup business models, customer discovery, and pitch competitions at BHU.</p>
+            </div>
+          </div>
+
+          <!-- Gallery Item 5: BHU Venue Event -->
+          <div class="gallery-card-item" onclick="openLightbox('./Gallary/gallary_5.jpeg', 'Institute of Science, BHU &bull; IDE Delegation', 'Seminar Complex, Mahamana Hall, Institute of Science, Banaras Hindu University')">
+            <div class="gallery-img-container">
+              <img src="./Gallary/gallary_5.jpeg" alt="Mohanish Guru at BHU Mahamana Hall" />
+              <div class="gallery-hover-glass">
+                <span class="gallery-view-pill">
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" /></svg>
+                  <span>Expand Image</span>
+                </span>
+              </div>
+            </div>
+            <div class="gallery-caption-box">
+              <span class="gallery-category-badge">CAMPUS DELEGATION</span>
+              <h4>Mahamana Hall &bull; BHU Campus</h4>
+              <p>Representing Dr. Babasaheb Ambedkar Technological University at Banaras Hindu University Innovation Summit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
          EDUCATION & ACHIEVEMENTS SECTION (Balanced 2-Column Recruiter Alignment)
          ========================================================================== -->
     <section class="section-wrap" id="education">
@@ -2825,8 +3648,8 @@
             </div>
             <div class="bottom-info-details">
               <h3>Runner-up – National Level Hackathon 2023</h3>
-              <div class="sub">Software Edition &bull; Dr. Babasaheb Ambedkar Technological University</div>
-              <div class="meta" style="background:#fef3c7; color:#b45309;">Software Engineering Excellence</div>
+              <div class="sub">Software Edition &bull; Smart India Hackathon (SIH) 2023</div>
+              <div class="meta" style="background:#fef3c7; color:#b45309;">Team Lead &bull; National Level Recognition</div>
             </div>
           </div>
         </div>
@@ -2948,6 +3771,30 @@
     </div>
 
     <!-- ==========================================================================
+         LIGHTBOX MODAL (Image & Certificate Viewer)
+         ========================================================================== -->
+    <div class="lightbox-modal-backdrop" id="imageLightboxModal" role="dialog" aria-modal="true" onclick="closeLightbox()">
+      <div class="lightbox-container" onclick="event.stopPropagation()">
+        <div class="lightbox-header">
+          <div class="lightbox-header-text">
+            <span id="lightboxCategory">CREDENTIAL</span>
+            <h3 id="lightboxTitle">Certificate Title</h3>
+          </div>
+          <button class="modal-close-btn" onclick="closeLightbox()" aria-label="Close image viewer">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+        <div class="lightbox-img-frame">
+          <img id="lightboxImg" src="" alt="Enlarged view" />
+        </div>
+        <div class="lightbox-caption-bar">
+          <span id="lightboxCaption">Caption details</span>
+          <button onclick="closeLightbox()" class="modal-action-btn">Close Preview</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
          RECRUITER RESUME MODAL (ATS Standard Format)
          ========================================================================== -->
     <div class="resume-modal-backdrop" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeDocName" onclick="closeResumeModal()">
@@ -3058,6 +3905,13 @@
             </ul>
           </div>
 
+          <div class="res-section-title">Certifications</div>
+          <div style="font-size:0.88rem; color:#334155; line-height:1.7;">
+            <div>&bull; <strong>Token Service Technology Virtual Experience Program</strong> &ndash; VISA &amp; Forage (Jan 2023)</div>
+            <div>&bull; <strong>Training Cum Internship Program (TETCIP)</strong> &ndash; TechEdu (Sep 2021)</div>
+            <div>&bull; <strong>Complete Python Programming (114 Total Hours)</strong> &ndash; Udemy (Jan 2023)</div>
+          </div>
+
           <div class="res-section-title">Education</div>
           <div style="display:flex; justify-content:space-between; font-weight:700; font-size:0.9rem;">
             <span>B.Tech – Electronics &amp; Telecommunication &bull; Dr. Babasaheb Ambedkar Technological University, Lonere</span>
@@ -3066,7 +3920,7 @@
 
           <div class="res-section-title">Achievements</div>
           <div style="font-size:0.88rem; color:#334155;">
-            <strong>Runner-up – National Level Hackathon 2023</strong> (Software Edition) &bull; Full-Stack Application &amp; Engineering Solution
+            <strong>Runner-up – National Level Hackathon 2023</strong> (Software Edition &bull; Smart India Hackathon SIH) &bull; Team Lead for DTechMaster &bull; Text-to-Video AI Solution
           </div>
         </div>
       </div>
@@ -3098,6 +3952,8 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -3136,25 +3992,49 @@
       }
     });
 
-    // Mobile menu toggle with icon swap
+    // Mobile menu toggle with backdrop sync and accessible icon swap
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');
-    const hamburgerSvg = `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>`;
-    const closeSvg = `<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>`;
+    const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+    const hamburgerSvg = `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>`;
+    const closeSvg = `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>`;
 
-    mobileMenuBtn.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('open');
-      mobileMenuBtn.setAttribute('aria-expanded', isOpen);
-      mobileMenuBtn.innerHTML = isOpen ? closeSvg : hamburgerSvg;
-    });
+    function toggleMobileMenu() {
+      if (navMenu.classList.contains('open')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    }
+
+    function openMobileMenu() {
+      navMenu.classList.add('open');
+      mobileNavBackdrop.classList.add('open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      mobileMenuBtn.innerHTML = closeSvg;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      navMenu.classList.remove('open');
+      mobileNavBackdrop.classList.remove('open');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      mobileMenuBtn.innerHTML = hamburgerSvg;
+      document.body.style.overflow = '';
+    }
 
     // Close menu when clicking nav links
     document.querySelectorAll('.nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        mobileMenuBtn.innerHTML = hamburgerSvg;
+        closeMobileMenu();
       });
+    });
+
+    // Close drawer on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
     });
 
     // Active link highlighting on scroll
@@ -3228,6 +4108,32 @@
           pill.classList.remove('match-highlight');
         }
       });
+    }
+
+    // ==========================================================================
+    // LIGHTBOX VIEWER LOGIC (Certificates & Gallery)
+    // ==========================================================================
+    const lightboxModal = document.getElementById('imageLightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxCategory = document.getElementById('lightboxCategory');
+
+    function openLightbox(src, title, caption, category = 'CREDENTIAL PREVIEW') {
+      lightboxImg.src = src;
+      lightboxTitle.innerHTML = title;
+      lightboxCaption.innerHTML = caption;
+      lightboxCategory.innerText = category;
+      lightboxModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        lightboxImg.src = '';
+      }, 250);
     }
 
     // ==========================================================================
@@ -3391,10 +4297,8 @@
         </div>
       `;
 
-      // Scroll modal body to top
       bodyContainer.scrollTop = 0;
 
-      // Update Contact CTA subject
       const contactBtn = document.getElementById('modalContactBtn');
       if (contactBtn) {
         contactBtn.href = `mailto:mohanishguru111@gmail.com?subject=Regarding%20${encodeURIComponent(proj.title)}%20Project%20-%20Mohanish%20Guru`;
@@ -3452,6 +4356,9 @@
       }
       if (resumeModal.classList.contains('open')) {
         if (e.key === 'Escape') closeResumeModal();
+      }
+      if (lightboxModal.classList.contains('open')) {
+        if (e.key === 'Escape') closeLightbox();
       }
     });
   </script>
